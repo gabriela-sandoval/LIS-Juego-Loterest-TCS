@@ -40,10 +40,30 @@ namespace LIS_Juego_Loterest
 
         private void ButtonIngresarIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            Menú menu = new Menú();
-            menu.ShowDialog();
+            try
+            {
+                App.JugadorEnLinea =
+                    App.ConexionBaseDeDatos1.LoguearUsuario
+                    (textBoxCorreoElectronicoIniciarSesion.Text, passwordBoxContraseniaIniciarSesion.Password);
+
+                if(App.JugadorEnLinea != null)
+                {
+                    Menú menú = new Menú();
+                    menú.Show();
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("El correo electrónico o contraseña son incorrectos", 
+                        "No se puede iniciar sesión", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepción: "  + ex.Message);
+            }
         }
 
-        public bool Aceptado { get; set; }
     }
 }

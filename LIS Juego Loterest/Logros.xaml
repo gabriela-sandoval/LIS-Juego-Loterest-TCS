@@ -11,7 +11,7 @@
     </Window.Background>
     <Grid>
         <Label Content="LOGROS" HorizontalAlignment="Left" Margin="142,10,0,0" VerticalAlignment="Top" FontSize="100" FontWeight="Bold" Foreground="White"/>
-        <Button x:Name="buttonRegresar" Content="" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="70" Height="70" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.028,0.087" Click="ButtonRegresar_Click">
+        <Button x:Name="buttonRegresar" Content="" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="70" Height="70" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.028,0.087">
             <Button.Background>
                 <ImageBrush ImageSource="Recursos/regresar.png" Stretch="Uniform"/>
             </Button.Background>

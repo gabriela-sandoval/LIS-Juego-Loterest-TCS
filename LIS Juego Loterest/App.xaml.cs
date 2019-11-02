@@ -13,5 +13,20 @@ namespace LIS_Juego_Loterest
     /// </summary>
     public partial class App : Application
     {
+        private static ConexionBaseDeDatos ConexionBaseDeDatos =
+            new ConexionBaseDeDatos();
+
+        public static ConexionBaseDeDatos ConexionBaseDeDatos1
+        {
+            get { return App.ConexionBaseDeDatos; }
+        }
+
+        private static Jugador jugadorEnLinea;
+
+        public static Jugador JugadorEnLinea
+        {
+            get { return App.jugadorEnLinea; }
+            set { App.jugadorEnLinea = value; }
+        }
     }
 }

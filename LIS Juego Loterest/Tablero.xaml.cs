@@ -26,8 +26,8 @@ namespace LIS_Juego_Loterest
 
         private void ButtonSeleccionarTablero_Click(object sender, RoutedEventArgs e)
         {
-            Sala sala = new Sala();
-            sala.ShowDialog();
+            //Sala sala = new Sala();
+            //sala.ShowDialog();
         }
 
         private void ButtonRegresar_Click(object sender, RoutedEventArgs e)

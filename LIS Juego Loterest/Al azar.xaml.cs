@@ -23,5 +23,6 @@ namespace LIS_Juego_Loterest
         {
             InitializeComponent();
         }
+
     }
 }

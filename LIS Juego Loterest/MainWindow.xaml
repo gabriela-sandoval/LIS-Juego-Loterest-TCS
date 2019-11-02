@@ -13,7 +13,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Rectangle HorizontalAlignment="Left" Height="150" Margin="0,-2,0,0" Stroke="Black" VerticalAlignment="Top" Width="1290">
+        <Rectangle x:Name="___Sin_nombre_" HorizontalAlignment="Left" Height="150" Margin="0,-2,0,0" Stroke="Black" VerticalAlignment="Top" Width="1290">
             <Rectangle.Fill>
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.75"/>
             </Rectangle.Fill>
