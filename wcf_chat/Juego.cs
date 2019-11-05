@@ -12,13 +12,11 @@ namespace wcf_chat
     using System;
     using System.Collections.Generic;
     
-    public partial class Jugador
+    public partial class Juego
     {
-        public string nombreJugador { get; set; }
-        public int idJugador { get; set; }
-        public string correoElectronicoJugador { get; set; }
-        public string contraseñaJugador { get; set; }
-        public Nullable<int> confirmacionJugador { get; set; }
-        public string codigoJugador { get; set; }
+        public int idJuego { get; set; }
+        public string nombreJuego { get; set; }
+        public string informacionDeJuego { get; set; }
+        public System.TimeSpan tiempoJuego { get; set; }
     }
 }

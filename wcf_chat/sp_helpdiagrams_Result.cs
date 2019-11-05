@@ -10,15 +10,13 @@
 namespace wcf_chat
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Jugador
+    public partial class sp_helpdiagrams_Result
     {
-        public string nombreJugador { get; set; }
-        public int idJugador { get; set; }
-        public string correoElectronicoJugador { get; set; }
-        public string contraseñaJugador { get; set; }
-        public Nullable<int> confirmacionJugador { get; set; }
-        public string codigoJugador { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

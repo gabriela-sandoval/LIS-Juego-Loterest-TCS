@@ -74,6 +74,9 @@
       <DependentUpon>DataModelLoterest.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Puntaje.cs">
+      <DependentUpon>DataModelLoterest.tt</DependentUpon>
+    </Compile>
     <Compile Include="ServerUser.cs" />
     <Compile Include="ServiceChat.cs" />
   </ItemGroup>
