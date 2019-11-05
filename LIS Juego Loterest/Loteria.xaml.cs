@@ -29,5 +29,11 @@ namespace LIS_Juego_Loterest
             Menú menu = new Menú();
             menu.ShowDialog();
         }
+
+        private void ButtonLoteria_Click(object sender, RoutedEventArgs e)
+        {
+            Ganaste ganaste = new Ganaste();
+            ganaste.Show();
+        }
     }
 }

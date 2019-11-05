@@ -23,5 +23,11 @@ namespace LIS_Juego_Loterest
         {
             InitializeComponent();
         }
+
+        private void ButtonAceptar_Click(object sender, RoutedEventArgs e)
+        {
+            Menú menu = new Menú();
+            menu.Show();
+        }
     }
 }

@@ -55,7 +55,7 @@
                 <ImageBrush ImageSource="Recursos/cartaLoteria.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="756,215,0,0" VerticalAlignment="Top" Width="290" Height="361" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button x:Name="buttonAlAzar" Content="" HorizontalAlignment="Left" Margin="756,215,0,0" VerticalAlignment="Top" Width="290" Height="361" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonAlAzar_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Recursos/cartaAlAzar.png" Stretch="Uniform"/>
             </Button.Background>

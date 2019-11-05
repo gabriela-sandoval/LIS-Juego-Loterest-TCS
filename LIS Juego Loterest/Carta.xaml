@@ -13,7 +13,7 @@
         <Image HorizontalAlignment="Left" Height="383" Margin="513,131,0,0" VerticalAlignment="Top" Width="257" Source="Recursos/04 - MOCHILA.png"/>
         <Image HorizontalAlignment="Left" Height="429" Margin="0,254,0,-54.333" VerticalAlignment="Top" Width="242" Source="Recursos/CartasfondoInvertido.png"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="770,276,0,0" VerticalAlignment="Top" Width="100" Source="Recursos/siguiente.png" RenderTransformOrigin="-0.393,-0.326"/>
-        <Button x:Name="buttonSeleccionarTablero" Content="SELECCIONAR" HorizontalAlignment="Left" Margin="928,290,0,0" VerticalAlignment="Top" Width="244" Background="White" BorderBrush="White" Foreground="#FFEC268F" FontFamily="Calibri Light" FontSize="36" Padding="10" RenderTransformOrigin="0.371,1.359" Height="70" FontWeight="Bold"/>
+        <Button x:Name="buttonSeleccionarTablero" Content="SELECCIONAR" HorizontalAlignment="Left" Margin="928,290,0,0" VerticalAlignment="Top" Width="244" Background="White" BorderBrush="White" Foreground="#FFEC268F" FontFamily="Calibri Light" FontSize="36" Padding="10" RenderTransformOrigin="0.371,1.359" Height="70" FontWeight="Bold" Click="ButtonSeleccionarTablero_Click"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="1172,490,0,0" VerticalAlignment="Top" Width="100" Source="Recursos/logoLoterest.png"/>
         <Button x:Name="buttonRegresar" Content="" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="70" Height="70" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.028,0.087">
             <Button.Background>

@@ -30,7 +30,7 @@
                 <SolidColorBrush Color="White" Opacity="0.8"/>
             </TextBox.Background>
         </TextBox>
-        <Image Grid.Column="0" HorizontalAlignment="Left" Height="411" Margin="1101,219,0,0" VerticalAlignment="Top" Width="178" Source="Recursos/cartasFondo.png"/>
+        <Image Grid.Column="0" HorizontalAlignment="Left" Height="411" Margin="1101,249,0,-2" VerticalAlignment="Top" Width="178" Source="Recursos/cartasFondo.png"/>
         <TextBox x:Name="textBoxCorreoElectronicoIniciarSesion" HorizontalAlignment="Left" Height="30" Margin="613,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" BorderBrush="{x:Null}" Foreground="#FF04547C" SelectionBrush="#FFCCE4E4" FontFamily="Calibri Light" FontSize="18">
             <TextBox.Background>
                 <SolidColorBrush Color="White" Opacity="0.8"/>

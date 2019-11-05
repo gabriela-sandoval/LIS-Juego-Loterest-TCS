@@ -33,7 +33,8 @@ namespace ChatClient
                     textBoxUserName.IsEnabled = false;
                     buttonConectadoDesconectado.Content = "Desconectarme";
                     isConnected = true;
-                } catch(System.Exception ex)
+                }
+                catch (System.Exception ex)
                 {
                     MessageBox.Show("Error al conectar con el host, no se encuentra disponible, intente en otro momento.", "Error de host");
                 }
@@ -58,11 +59,26 @@ namespace ChatClient
             if (isConnected)
             {
                 DisconnectUser();
+                listBoxJugadoresDisponibles.Items.Remove(textBoxUserName.Text);
+                listBoxJugadoresDisponibles.ScrollIntoView(listBoxJugadoresDisponibles.Items[listBoxJugadoresDisponibles.Items.Count - 1]);
             }
             else
             {
                 ConnectUser();
+                listBoxJugadoresDisponibles.Items.Add(textBoxUserName.Text);
+                listBoxJugadoresDisponibles.ScrollIntoView(listBoxJugadoresDisponibles.Items[listBoxJugadoresDisponibles.Items.Count - 1]);
             }
+
+            //using (Model baseDeDatos = new Model.JuegoLoterest())
+            //{
+            //    var oJugador = new Model.Jugador();
+            //    oJugador.nombre = textBoxNombreDeUsuarioCrearCuenta.Text;
+            //    oUsuario.email = textBoxCorreoElectronicoCrearCuenta.Text;
+            //    oUsuario.contrasena = PasswordBoxContraseniaCrearCuenta.Password;
+
+            //    db.Usuarios.Add(oUsuario);
+            //    db.SaveChanges();
+            //}
 
         }
 
@@ -96,6 +112,16 @@ namespace ChatClient
                 client.SendMsg(textBoxMensaje.Text, ID);
                 textBoxMensaje.Text = string.Empty;
             }
+        }
+
+        private void ListBoxJugadoresDisponibles_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            ConnectUser();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

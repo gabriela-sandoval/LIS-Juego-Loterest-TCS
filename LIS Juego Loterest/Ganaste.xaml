@@ -15,7 +15,7 @@
         <Label Content="¡GANASTE!" HorizontalAlignment="Left" Margin="245,122,0,0" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="150" Width="753" Height="236" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontWeight="Bold"/>
         <Label Content="Puntaje:" HorizontalAlignment="Left" Margin="377,396,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" FontFamily="Calibri Light" FontSize="72"/>
         <Label Content="1600" HorizontalAlignment="Left" Margin="655,396,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" FontFamily="Calibri Light" FontSize="72"/>
-        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="513,523,0,0" VerticalAlignment="Top" Width="171" BorderBrush="White" Foreground="#FF04547C" Height="63" FontFamily="Calibri Light" FontSize="36"/>
+        <Button x:Name="buttonAceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="513,523,0,0" VerticalAlignment="Top" Width="171" BorderBrush="White" Foreground="#FF04547C" Height="63" FontFamily="Calibri Light" FontSize="36" Click="ButtonAceptar_Click"/>
 
     </Grid>
 </Window>

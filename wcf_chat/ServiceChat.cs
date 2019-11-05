@@ -26,6 +26,7 @@ namespace wcf_chat
             nextId++;
 
             SendMsg(user.Name+" se conectó al chat...",0);
+            Console.WriteLine("Usuario conectado: " + user.Name);
             users.Add(user);
             return user.ID;
         }
@@ -37,6 +38,7 @@ namespace wcf_chat
             {
                 users.Remove(user);
                 SendMsg(user.Name + " se desconectó del chat...",0);
+                Console.WriteLine("Usuario desconectado: " + user.Name);
             }
         }
 
@@ -53,6 +55,31 @@ namespace wcf_chat
                 }
                 answer += msg;
                 item.operationContext.GetCallbackChannel<IServerChatCallback>().MsgCallback(answer);
+            }
+        }
+
+        public int ConnectUser(string name)
+        {
+
+            ServerUser user = new ServerUser()
+            {
+                ID = nextId,
+                Name = name,
+                operationContext = OperationContext.Current
+            };
+            nextId++;
+
+            SendMsg(user.Name, 0);
+            users.Add(user);
+            return user.ID;
+        }
+
+        public void DisconnectUser(int id)
+        {
+            var user = users.FirstOrDefault(i => i.ID == id);
+            if (user != null)
+            {
+                users.Remove(user);
             }
         }
     }

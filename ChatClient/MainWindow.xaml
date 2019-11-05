@@ -40,6 +40,14 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <Rectangle HorizontalAlignment="Left" Height="420" Margin="346,145,0,0" Stroke="Black" VerticalAlignment="Top" Width="850" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="White" Opacity="0.75"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <ListBox x:Name="listBoxJugadoresDisponibles" HorizontalAlignment="Left" Height="380" Margin="367,167,0,0" VerticalAlignment="Top" Width="810" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="18" SelectionChanged="ListBoxJugadoresDisponibles_SelectionChanged"/>
+        <TextBox x:Name="textBoxUserName_Copy" HorizontalAlignment="Left" Height="73" Margin="346,41,0,0" TextWrapping="Wrap" Text="Jugadores disponibles" VerticalAlignment="Top" Width="447" FontFamily="Calibri Light" FontSize="48" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Button Content="Jugar" Grid.Column="1" HorizontalAlignment="Left" Margin="69.667,41,0,0" VerticalAlignment="Top" Width="167" Height="73" FontFamily="Calibri Light" FontSize="22" Background="White" Foreground="#FF322D56" BorderBrush="White" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

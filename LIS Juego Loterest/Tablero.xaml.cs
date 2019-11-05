@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace LIS_Juego_Loterest
 {
     /// <summary>
@@ -26,14 +27,14 @@ namespace LIS_Juego_Loterest
 
         private void ButtonSeleccionarTablero_Click(object sender, RoutedEventArgs e)
         {
-            //Sala sala = new Sala();
-            //sala.ShowDialog();
+            Loteria loteria = new Loteria();
+            loteria.Show();
         }
 
         private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
         {
             Menú menu = new Menú();
-            menu.ShowDialog();
+            menu.Show();
         }
     }
 }

@@ -16,17 +16,17 @@ namespace LIS_Juego_Loterest
         private static ConexionBaseDeDatos ConexionBaseDeDatos =
             new ConexionBaseDeDatos();
 
-        public static ConexionBaseDeDatos ConexionBaseDeDatos1
-        {
-            get { return App.ConexionBaseDeDatos; }
-        }
+        //public static ConexionBaseDeDatos ConexionBaseDeDatos1
+        //{
+        //    get { return App.ConexionBaseDeDatos; }
+        //}
 
-        private static Jugador jugadorEnLinea;
+        //private static Jugador jugadorEnLinea;
 
-        public static Jugador JugadorEnLinea
-        {
-            get { return App.jugadorEnLinea; }
-            set { App.jugadorEnLinea = value; }
-        }
+        //public static Jugador JugadorEnLinea
+        //{
+        //    get { return App.jugadorEnLinea; }
+        //    set { App.jugadorEnLinea = value; }
+        //}
     }
 }

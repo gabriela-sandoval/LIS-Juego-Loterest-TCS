@@ -23,5 +23,11 @@ namespace LIS_Juego_Loterest
         {
             InitializeComponent();
         }
+
+        private void ButtonSeleccionarTablero_Click(object sender, RoutedEventArgs e)
+        {
+            Al_azar azar = new Al_azar();
+            azar.Show();
+        }
     }
 }

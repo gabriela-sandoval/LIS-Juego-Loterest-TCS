@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using ChatClient.ServiceChat;
+
 namespace LIS_Juego_Loterest
 {
     /// <summary>
@@ -20,6 +22,10 @@ namespace LIS_Juego_Loterest
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool isConnected = false;
+        ServiceChatClient client;
+        int ID;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,43 +33,24 @@ namespace LIS_Juego_Loterest
 
         private void ButtonSiguienteIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            Verificación form = new Verificación();
-            form.ShowDialog();
-            //Aceptado = false;
-            //if(PasswordBoxContraseniaCrearCuenta.Password.Equals("Gabriela"))
-            //{
-               // Aceptado = true;
-           // }
-            //Para cerrar la ventana
-            //DialogResult = true;
+
+                        Verificación verificación = new Verificación();
+                        verificación.Show();
+
+                        this.Close();
+
         }
 
         private void ButtonIngresarIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                App.JugadorEnLinea =
-                    App.ConexionBaseDeDatos1.LoguearUsuario
-                    (textBoxCorreoElectronicoIniciarSesion.Text, passwordBoxContraseniaIniciarSesion.Password);
-
-                if(App.JugadorEnLinea != null)
-                {
+            
                     Menú menú = new Menú();
                     menú.Show();
 
                     this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("El correo electrónico o contraseña son incorrectos", 
-                        "No se puede iniciar sesión", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrió una excepción: "  + ex.Message);
-            }
         }
+
+
 
     }
 }

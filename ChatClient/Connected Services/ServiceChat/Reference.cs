@@ -1,4 +1,6 @@
-﻿namespace ChatClient.ServiceChat {
+﻿using System;
+
+namespace ChatClient.ServiceChat {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -54,7 +56,17 @@
         public ServiceChatClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
-        
+
+        internal int ConnectUser(string text)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int LoggedInUser(string text)
+        {
+            throw new NotImplementedException();
+        }
+
         public ServiceChatClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(callbackInstance, binding, remoteAddress) {
         }

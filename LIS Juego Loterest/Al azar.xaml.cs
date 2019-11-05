@@ -24,5 +24,10 @@ namespace LIS_Juego_Loterest
             InitializeComponent();
         }
 
+        private void ButtonLoteria_Click(object sender, RoutedEventArgs e)
+        {
+            Perdiste perdiste = new Perdiste();
+            perdiste.Show();
+        }
     }
 }

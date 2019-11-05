@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LIS_Juego_Loterest"
         mc:Ignorable="d"
-        Title="LOTEREST" Height="658" Width="1290" Icon="Recursos/logoLoterest.png" WindowState="Maximized">
+        Title="LOTEREST" Height="658" Width="1290" Icon="Recursos/logoLoterest.png" WindowState="Maximized" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="Recursos/fondoPrincipal.png"/>
     </Window.Background>
@@ -20,7 +20,7 @@
         <Image HorizontalAlignment="Left" Height="150" Margin="470,458,0,0" VerticalAlignment="Top" Width="100" Source="Recursos/03 - PROFESOR.png"/>
         <Image HorizontalAlignment="Left" Height="150" Margin="601,458,0,0" VerticalAlignment="Top" Width="100" Source="Recursos/02 - LAPTOP.png"/>
         <Image HorizontalAlignment="Left" Height="150" Margin="730,458,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.095,0.309" Source="Recursos/01 - ESTUDIANTES.png"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="970,162,0,0" VerticalAlignment="Top" Width="258" Height="125" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button x:Name="buttonLoteria" Content="" HorizontalAlignment="Left" Margin="970,162,0,0" VerticalAlignment="Top" Width="258" Height="125" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonLoteria_Click">
             <Button.Background>
                 <ImageBrush Stretch="Uniform" ImageSource="Recursos/botonLoteria.png"/>
             </Button.Background>

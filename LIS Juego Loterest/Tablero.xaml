@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LIS_Juego_Loterest"
         mc:Ignorable="d"
-        Title="LOTEREST" Height="658" Width="1290" Icon="Recursos/regresar.png" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="LOTEREST" Height="658" Width="1290" Icon="Recursos/logoLoterest.png" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Background>
         <ImageBrush ImageSource="Recursos/fondoPrincipal.png"/>
     </Window.Background>

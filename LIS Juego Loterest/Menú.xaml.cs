@@ -27,14 +27,17 @@ namespace LIS_Juego_Loterest
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Tablero tablero = new Tablero();
-            tablero.ShowDialog();
+            tablero.Show();
+
+            this.Close();
         }
 
-        //private bool LlamarPantallaIngreso()
-        // {
-        //   MainWindow inicio = new MainWindow();
-        //  inicio.ShowDialog();
-        //return inicio.Aceptado;
-        // }
+        private void ButtonAlAzar_Click(object sender, RoutedEventArgs e)
+        {
+            Carta carta = new Carta();
+            carta.Show();
+
+            this.Close();
+        }
     }
 }
