@@ -13,12 +13,12 @@ namespace ServerServices.Util
         ///     Contexto de operación de WCF.
         /// </summary>
         private readonly OperationContext _operationContext;
-        
+
         /// <summary>
         ///     Canal de callback del servicio.
         /// </summary>
         private TCallback _callback;
-        
+
         public OperationContextWrapper(OperationContext operationContext)
         {
             _operationContext = operationContext;
@@ -30,10 +30,7 @@ namespace ServerServices.Util
         /// <returns>Canal de callback del servicio</returns>
         public TCallback GetCallback()
         {
-            if (_callback == null)
-            {
-                _callback = _operationContext.GetCallbackChannel<TCallback>();
-            }
+            if (_callback == null) _callback = _operationContext.GetCallbackChannel<TCallback>();
 
             return _callback;
         }

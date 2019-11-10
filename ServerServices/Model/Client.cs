@@ -1,22 +1,40 @@
-using System;
-using System.ServiceModel;
+using ServerServices.Util;
 
 namespace ServerServices.Model
 {
-    public class Client
+    /// <summary>
+    ///     Representa un cliente conectado al servidor.
+    /// </summary>
+    /// <typeparam name="TCallback">Tipo de callback de servicio</typeparam>
+    public class Client<TCallback>
     {
-        public string SessionId { get; set; }
-        public string Username { get; set; }
-        private readonly OperationContext _operationContext;
+        /// <summary>
+        ///     Wrapper del contexto de operación de WCF del cliente.
+        /// </summary>
+        private readonly OperationContextWrapper<TCallback> _operationContext;
 
-        public Client(OperationContext operationContext)
+        public Client(OperationContextWrapper<TCallback> operationContext)
         {
             _operationContext = operationContext;
         }
 
-        public T GetCallbackProxy<T>() where T : class
+        /// <summary>
+        ///     Id (Guid) de la sesión del cliente.
+        /// </summary>
+        public string SessionId { get; set; }
+
+        /// <summary>
+        ///     Nombre de usuario del cliente.
+        /// </summary>
+        public string Username { get; set; }
+
+        /// <summary>
+        ///     Devuelve el canal de callback del servicio.
+        /// </summary>
+        /// <returns>Canal de callback del servicio</returns>
+        public TCallback GetCallbackProxy()
         {
-            return _operationContext.GetCallbackChannel<T>();
+            return _operationContext.GetCallback();
         }
     }
 }
