@@ -51,60 +51,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Carta.cs">
-      <DependentUpon>DataModelLoterest.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModelLoterest.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModelLoterest.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModelLoterest.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModelLoterest.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModelLoterest.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModelLoterest.edmx</DependentUpon>
-    </Compile>
     <Compile Include="IServiceChat.cs" />
-    <Compile Include="Jugador.cs">
-      <DependentUpon>DataModelLoterest.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Puntaje.cs">
-      <DependentUpon>DataModelLoterest.tt</DependentUpon>
-    </Compile>
     <Compile Include="ServerUser.cs" />
     <Compile Include="ServiceChat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EntityDeploy Include="DataModelLoterest.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModelLoterest.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DataModelLoterest.edmx.diagram">
-      <DependentUpon>DataModelLoterest.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DataModelLoterest.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModelLoterest.edmx</DependentUpon>
-      <LastGenOutput>DataModelLoterest.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DataModelLoterest.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModelLoterest.edmx</DependentUpon>
-      <LastGenOutput>DataModelLoterest.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
