@@ -44,6 +44,9 @@
     <Compile Include="Interface\ILoginService.cs" />
     <Compile Include="Interface\ILoginServiceCallback.cs" />
     <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\Enum\LoginRequestReplyCode.cs" />
+    <Compile Include="Model\Enum\RegisterRequestReplyCode.cs" />
+    <Compile Include="Model\Enum\VerificationRequestReplyCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ChatService.cs" />
     <Compile Include="LoginService.cs" />
