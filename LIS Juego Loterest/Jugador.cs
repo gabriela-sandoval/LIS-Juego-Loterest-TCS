@@ -7,13 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wcf_chat
+namespace LIS_Juego_Loterest
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagramdefinition_Result
+    public partial class Jugador
     {
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id { get; set; }
+        public string nombreJugador { get; set; }
+        public string correoElectronico { get; set; }
+        public string contrasenia { get; set; }
     }
 }

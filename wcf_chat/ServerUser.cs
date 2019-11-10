@@ -1,11 +1,11 @@
 ﻿using System.ServiceModel;
-namespace wcf_chat
+namespace WcfServices
 {
     public class ServerUser
     {
-        public int ID { get; set; }
+        public int idUser { get; set; }
 
-        public string Name { get; set; }
+        public string nameUser { get; set; }
 
         public OperationContext operationContext { get; set; }
     }

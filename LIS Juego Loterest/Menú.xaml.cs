@@ -39,5 +39,29 @@ namespace LIS_Juego_Loterest
 
             this.Close();
         }
+
+        private void ButtonIdioma_Click(object sender, RoutedEventArgs e)
+        {
+            Idioma idioma = new Idioma();
+            idioma.ShowDialog();
+        }
+
+        private void ButtonComoJugar_Click(object sender, RoutedEventArgs e)
+        {
+            ComoJugar comoJugar = new ComoJugar();
+            comoJugar.ShowDialog();
+        }
+
+        private void ButtonAcercaDe_Click(object sender, RoutedEventArgs e)
+        {
+            AcercaDe acercaDe = new AcercaDe();
+            acercaDe.ShowDialog();
+        }
+
+        private void ButtonSalir_Click(object sender, RoutedEventArgs e)
+        {
+            Salir salir = new Salir();
+            salir.ShowDialog();
+        }
     }
 }

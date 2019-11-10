@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace wcf_chat
+namespace WcfServices
 {
     using System;
     using System.Collections.Generic;
@@ -15,6 +15,6 @@ namespace wcf_chat
     public partial class Puntaje
     {
         public int idPuntaje { get; set; }
-        public string totalPuntaje { get; set; }
+        public int totalPuntaje { get; set; }
     }
 }

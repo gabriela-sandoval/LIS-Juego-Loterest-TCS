@@ -12,31 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-
 namespace LIS_Juego_Loterest
 {
     /// <summary>
-    /// Lógica de interacción para Tablero.xaml
+    /// Lógica de interacción para ComoJugar.xaml
     /// </summary>
-    public partial class Tablero : Window
+    public partial class ComoJugar : Window
     {
-        public Tablero()
+        public ComoJugar()
         {
             InitializeComponent();
         }
-
-        private void ButtonSeleccionarTablero_Click(object sender, RoutedEventArgs e)
-        {
-            Loteria loteria = new Loteria();
-            loteria.Show();
-        }
-
-        private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
-        {
-            Menú menu = new Menú();
-            menu.Show();
-        }
-
-        
     }
 }

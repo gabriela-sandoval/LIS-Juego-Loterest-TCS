@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Baraja.cs">
+      <DependentUpon>DataModelLoterest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Carta.cs">
       <DependentUpon>DataModelLoterest.tt</DependentUpon>
     </Compile>
@@ -69,16 +72,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataModelLoterest.edmx</DependentUpon>
     </Compile>
-    <Compile Include="IServiceChat.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="Juego.cs">
+      <DependentUpon>DataModelLoterest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Jugador.cs">
+      <DependentUpon>DataModelLoterest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logro.cs">
+      <DependentUpon>DataModelLoterest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MensajeChat.cs">
       <DependentUpon>DataModelLoterest.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Puntaje.cs">
       <DependentUpon>DataModelLoterest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sala.cs">
+      <DependentUpon>DataModelLoterest.tt</DependentUpon>
+    </Compile>
     <Compile Include="ServerUser.cs" />
-    <Compile Include="ServiceChat.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="Tablero.cs">
+      <DependentUpon>DataModelLoterest.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

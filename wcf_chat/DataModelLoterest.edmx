@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="JuegoLoterestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="JuegoLoterestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Baraja">
           <Key>
             <PropertyRef Name="idBaraja" />
@@ -56,6 +56,13 @@
           <Property Name="idMensajeChat" Type="int" Nullable="false" />
           <Property Name="horaMensajeChat" Type="time" Precision="7" Nullable="false" />
         </EntityType>
+        <EntityType Name="Puntaje">
+          <Key>
+            <PropertyRef Name="idPuntaje" />
+          </Key>
+          <Property Name="idPuntaje" Type="int" Nullable="false" />
+          <Property Name="totalPuntaje" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Sala">
           <Key>
             <PropertyRef Name="idSala" />
@@ -69,37 +76,6 @@
           <Property Name="idTablero" Type="int" Nullable="false" />
           <Property Name="casillaTablero" Type="int" Nullable="false" />
         </EntityType>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="JuegoLoterestModelStoreContainer">
           <EntitySet Name="Baraja" EntityType="Self.Baraja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Carta" EntityType="Self.Carta" Schema="dbo" store:Type="Tables" />
@@ -107,103 +83,57 @@
           <EntitySet Name="Jugador" EntityType="Self.Jugador" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Logro" EntityType="Self.Logro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MensajeChat" EntityType="Self.MensajeChat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Puntaje" EntityType="Self.Puntaje" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sala" EntityType="Self.Sala" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tablero" EntityType="Self.Tablero" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="JuegoLoterestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Jugador">
-          <Key>
-            <PropertyRef Name="idJugador" />
-          </Key>
-          <Property Name="nombreJugador" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idJugador" Type="Int32" Nullable="false" />
-          <Property Name="correoElectronicoJugador" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="contraseñaJugador" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="confirmacionJugador" Type="Int32" />
-          <Property Name="codigoJugador" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityContainer Name="JuegoLoterestEntitiesApp" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Jugador" EntityType="Self.Jugador" />
-          <EntitySet Name="Cartas" EntityType="JuegoLoterestModel.Carta" />
-          <EntitySet Name="Puntajes" EntityType="JuegoLoterestModel.Puntaje" />
-          <EntitySet Name="Barajas" EntityType="JuegoLoterestModel.Baraja" />
-          <EntitySet Name="Juegoes" EntityType="JuegoLoterestModel.Juego" />
-          <EntitySet Name="Logroes" EntityType="JuegoLoterestModel.Logro" />
-          <EntitySet Name="MensajeChats" EntityType="JuegoLoterestModel.MensajeChat" />
-          <EntitySet Name="Salas" EntityType="JuegoLoterestModel.Sala" />
-          <EntitySet Name="Tableroes" EntityType="JuegoLoterestModel.Tablero" />
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(JuegoLoterestModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(JuegoLoterestModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
-        </EntityContainer>
-        <EntityType Name="Carta">
-          <Key>
-            <PropertyRef Name="idCarta" />
-          </Key>
-          <Property Name="idCarta" Type="Int32" Nullable="false" />
-          <Property Name="nombreCarta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="rutaImagenCarta" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Puntaje">
-          <Key>
-            <PropertyRef Name="idPuntaje" />
-          </Key>
-          <Property Name="idPuntaje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="totalPuntaje" Type="String" Nullable="false" />
-        </EntityType>
         <EntityType Name="Baraja">
           <Key>
             <PropertyRef Name="idBaraja" />
           </Key>
           <Property Name="idBaraja" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="Carta">
+          <Key>
+            <PropertyRef Name="idCarta" />
+          </Key>
+          <Property Name="idCarta" Type="Int32" Nullable="false" />
+          <Property Name="nombreCarta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rutaImagenCarta" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
         <EntityType Name="Juego">
           <Key>
             <PropertyRef Name="idJuego" />
           </Key>
           <Property Name="idJuego" Type="Int32" Nullable="false" />
-          <Property Name="nombreJuego" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="informacionDeJuego" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombreJuego" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="informacionDeJuego" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tiempoJuego" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="Jugador">
+          <Key>
+            <PropertyRef Name="idJugador" />
+          </Key>
+          <Property Name="idJugador" Type="Int32" Nullable="false" />
+          <Property Name="nombreJugador" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correoElectronicoJugador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contraseñaJugador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="confirmacionJugador" Type="Int32" />
+          <Property Name="codigoJugador" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Logro">
           <Key>
             <PropertyRef Name="idLogro" />
           </Key>
           <Property Name="idLogro" Type="Int32" Nullable="false" />
-          <Property Name="nombreLogro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="descripcionLogro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="rutaImagenLogro" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="nombreLogro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcionLogro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rutaImagenLogro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="desbloqueoLogro" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="MensajeChat">
@@ -212,6 +142,13 @@
           </Key>
           <Property Name="idMensajeChat" Type="Int32" Nullable="false" />
           <Property Name="horaMensajeChat" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="Puntaje">
+          <Key>
+            <PropertyRef Name="idPuntaje" />
+          </Key>
+          <Property Name="idPuntaje" Type="Int32" Nullable="false" />
+          <Property Name="totalPuntaje" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Sala">
           <Key>
@@ -226,119 +163,103 @@
           <Property Name="idTablero" Type="Int32" Nullable="false" />
           <Property Name="casillaTablero" Type="Int32" Nullable="false" />
         </EntityType>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
+        <EntityContainer Name="JuegoLoterestEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Baraja" EntityType="Self.Baraja" />
+          <EntitySet Name="Carta" EntityType="Self.Carta" />
+          <EntitySet Name="Juego" EntityType="Self.Juego" />
+          <EntitySet Name="Jugador" EntityType="Self.Jugador" />
+          <EntitySet Name="Logro" EntityType="Self.Logro" />
+          <EntitySet Name="MensajeChat" EntityType="Self.MensajeChat" />
+          <EntitySet Name="Puntaje" EntityType="Self.Puntaje" />
+          <EntitySet Name="Sala" EntityType="Self.Sala" />
+          <EntitySet Name="Tablero" EntityType="Self.Tablero" />
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="JuegoLoterestModelStoreContainer" CdmEntityContainer="JuegoLoterestEntitiesApp">
-          <EntitySetMapping Name="Jugador">
-            <EntityTypeMapping TypeName="JuegoLoterestModel.Jugador">
-              <MappingFragment StoreEntitySet="Jugador">
-                <ScalarProperty Name="codigoJugador" ColumnName="codigoJugador" />
-                <ScalarProperty Name="confirmacionJugador" ColumnName="confirmacionJugador" />
-                <ScalarProperty Name="contraseñaJugador" ColumnName="contraseñaJugador" />
-                <ScalarProperty Name="correoElectronicoJugador" ColumnName="correoElectronicoJugador" />
-                <ScalarProperty Name="idJugador" ColumnName="idJugador" />
-                <ScalarProperty Name="nombreJugador" ColumnName="nombreJugador" />
-                </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Cartas">
-            <EntityTypeMapping TypeName="JuegoLoterestModel.Carta">
-              <MappingFragment StoreEntitySet="Carta">
-                <ScalarProperty Name="rutaImagenCarta" ColumnName="rutaImagenCarta" />
-                <ScalarProperty Name="nombreCarta" ColumnName="nombreCarta" />
-                <ScalarProperty Name="idCarta" ColumnName="idCarta" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Barajas">
+        <EntityContainerMapping StorageEntityContainer="JuegoLoterestModelStoreContainer" CdmEntityContainer="JuegoLoterestEntities1">
+          <EntitySetMapping Name="Baraja">
             <EntityTypeMapping TypeName="JuegoLoterestModel.Baraja">
               <MappingFragment StoreEntitySet="Baraja">
                 <ScalarProperty Name="idBaraja" ColumnName="idBaraja" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Juegoes">
+          <EntitySetMapping Name="Carta">
+            <EntityTypeMapping TypeName="JuegoLoterestModel.Carta">
+              <MappingFragment StoreEntitySet="Carta">
+                <ScalarProperty Name="idCarta" ColumnName="idCarta" />
+                <ScalarProperty Name="nombreCarta" ColumnName="nombreCarta" />
+                <ScalarProperty Name="rutaImagenCarta" ColumnName="rutaImagenCarta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Juego">
             <EntityTypeMapping TypeName="JuegoLoterestModel.Juego">
               <MappingFragment StoreEntitySet="Juego">
-                <ScalarProperty Name="tiempoJuego" ColumnName="tiempoJuego" />
-                <ScalarProperty Name="informacionDeJuego" ColumnName="informacionDeJuego" />
-                <ScalarProperty Name="nombreJuego" ColumnName="nombreJuego" />
                 <ScalarProperty Name="idJuego" ColumnName="idJuego" />
+                <ScalarProperty Name="nombreJuego" ColumnName="nombreJuego" />
+                <ScalarProperty Name="informacionDeJuego" ColumnName="informacionDeJuego" />
+                <ScalarProperty Name="tiempoJuego" ColumnName="tiempoJuego" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Logroes">
+          <EntitySetMapping Name="Jugador">
+            <EntityTypeMapping TypeName="JuegoLoterestModel.Jugador">
+              <MappingFragment StoreEntitySet="Jugador">
+                <ScalarProperty Name="idJugador" ColumnName="idJugador" />
+                <ScalarProperty Name="nombreJugador" ColumnName="nombreJugador" />
+                <ScalarProperty Name="correoElectronicoJugador" ColumnName="correoElectronicoJugador" />
+                <ScalarProperty Name="contraseñaJugador" ColumnName="contraseñaJugador" />
+                <ScalarProperty Name="confirmacionJugador" ColumnName="confirmacionJugador" />
+                <ScalarProperty Name="codigoJugador" ColumnName="codigoJugador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logro">
             <EntityTypeMapping TypeName="JuegoLoterestModel.Logro">
               <MappingFragment StoreEntitySet="Logro">
-                <ScalarProperty Name="desbloqueoLogro" ColumnName="desbloqueoLogro" />
-                <ScalarProperty Name="rutaImagenLogro" ColumnName="rutaImagenLogro" />
-                <ScalarProperty Name="descripcionLogro" ColumnName="descripcionLogro" />
-                <ScalarProperty Name="nombreLogro" ColumnName="nombreLogro" />
                 <ScalarProperty Name="idLogro" ColumnName="idLogro" />
+                <ScalarProperty Name="nombreLogro" ColumnName="nombreLogro" />
+                <ScalarProperty Name="descripcionLogro" ColumnName="descripcionLogro" />
+                <ScalarProperty Name="rutaImagenLogro" ColumnName="rutaImagenLogro" />
+                <ScalarProperty Name="desbloqueoLogro" ColumnName="desbloqueoLogro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MensajeChats">
+          <EntitySetMapping Name="MensajeChat">
             <EntityTypeMapping TypeName="JuegoLoterestModel.MensajeChat">
               <MappingFragment StoreEntitySet="MensajeChat">
-                <ScalarProperty Name="horaMensajeChat" ColumnName="horaMensajeChat" />
                 <ScalarProperty Name="idMensajeChat" ColumnName="idMensajeChat" />
+                <ScalarProperty Name="horaMensajeChat" ColumnName="horaMensajeChat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Salas">
+          <EntitySetMapping Name="Puntaje">
+            <EntityTypeMapping TypeName="JuegoLoterestModel.Puntaje">
+              <MappingFragment StoreEntitySet="Puntaje">
+                <ScalarProperty Name="idPuntaje" ColumnName="idPuntaje" />
+                <ScalarProperty Name="totalPuntaje" ColumnName="totalPuntaje" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sala">
             <EntityTypeMapping TypeName="JuegoLoterestModel.Sala">
               <MappingFragment StoreEntitySet="Sala">
                 <ScalarProperty Name="idSala" ColumnName="idSala" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tableroes">
+          <EntitySetMapping Name="Tablero">
             <EntityTypeMapping TypeName="JuegoLoterestModel.Tablero">
               <MappingFragment StoreEntitySet="Tablero">
-                <ScalarProperty Name="casillaTablero" ColumnName="casillaTablero" />
                 <ScalarProperty Name="idTablero" ColumnName="idTablero" />
+                <ScalarProperty Name="casillaTablero" ColumnName="casillaTablero" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="JuegoLoterestModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="JuegoLoterestModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="JuegoLoterestModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="JuegoLoterestModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="JuegoLoterestModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="JuegoLoterestModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="JuegoLoterestModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="JuegoLoterestModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="JuegoLoterestModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -353,7 +274,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />

@@ -65,15 +65,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AcercaDe.xaml.cs">
+      <DependentUpon>AcercaDe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Al azar.xaml.cs">
       <DependentUpon>Al azar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Carta.xaml.cs">
       <DependentUpon>Carta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ComoJugar.xaml.cs">
+      <DependentUpon>ComoJugar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ConexionBaseDeDatos.cs" />
     <Compile Include="Ganaste.xaml.cs">
       <DependentUpon>Ganaste.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Idioma.xaml.cs">
+      <DependentUpon>Idioma.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logros.xaml.cs">
       <DependentUpon>Logros.xaml</DependentUpon>
@@ -87,12 +96,22 @@
     <Compile Include="Perdiste.xaml.cs">
       <DependentUpon>Perdiste.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SalaChat.xaml.cs">
+      <DependentUpon>SalaChat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Salir.xaml.cs">
+      <DependentUpon>Salir.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tablero.xaml.cs">
       <DependentUpon>Tablero.xaml</DependentUpon>
     </Compile>
     <Compile Include="Verificación.xaml.cs">
       <DependentUpon>Verificación.xaml</DependentUpon>
     </Compile>
+    <Page Include="AcercaDe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Al azar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,7 +120,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ComoJugar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ganaste.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Idioma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,6 +157,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Perdiste.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SalaChat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Salir.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,9 +256,9 @@
       <Project>{fc45b876-7b87-4ac9-ba64-47ba9c69be36}</Project>
       <Name>ChatHost</Name>
     </ProjectReference>
-    <ProjectReference Include="..\wcf_chat\wcf_chat.csproj">
+    <ProjectReference Include="..\wcf_chat\WcfServices.csproj">
       <Project>{6cefeb18-3b2f-4270-8151-d9cfb0cff816}</Project>
-      <Name>wcf_chat</Name>
+      <Name>WcfServices</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -284,6 +319,24 @@
     <Resource Include="Cartas\52 Perro.png" />
     <Resource Include="Cartas\53 Trofeo.png" />
     <Resource Include="Cartas\54 Horario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\imagenUsuarioCamaleon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\imagenUsuarioCerdito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\imagenUsuarioRana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\imagenUsuarioRata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\desarrollador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\salir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

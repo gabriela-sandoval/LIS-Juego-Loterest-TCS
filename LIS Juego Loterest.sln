@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LIS Juego Loterest", "LIS Juego Loterest\LIS Juego Loterest.csproj", "{E2E95188-5136-453F-9AF8-D41590A7ACCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wcf_chat", "wcf_chat\wcf_chat.csproj", "{6CEFEB18-3B2F-4270-8151-D9CFB0CFF816}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServices", "wcf_chat\WcfServices.csproj", "{6CEFEB18-3B2F-4270-8151-D9CFB0CFF816}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClient", "ChatClient\ChatClient.csproj", "{CA97B380-E941-45FA-82EA-DFF4F317794A}"
 EndProject
