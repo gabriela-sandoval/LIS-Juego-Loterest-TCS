@@ -353,3 +353,5 @@ MigrationBackup/
 LIS Juego Loterest/App.config
 
 Server/App.config
+
+ChatClient/App.config
