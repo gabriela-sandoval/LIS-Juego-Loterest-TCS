@@ -1,56 +1,64 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using ChatClient.ServiceChat;
+using LIS_Juego_Loterest.Util;
+using ServerServices;
+using ServerServices.Interface;
+using ServerServices.Model;
 
 namespace LIS_Juego_Loterest
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : ILoginServiceCallback
     {
-        bool isConnected = false;
-        ServiceChatClient client;
-        int ID;
-
+        /// <summary>
+        ///     Interfaz del servicio de Login que se conecta al servidor.
+        /// </summary>
+        private readonly ILoginService _loginService;
+        
         public MainWindow()
         {
             InitializeComponent();
+            _loginService = ClientFactory.CreateDuplexChannel<ILoginService, ILoginServiceCallback>(this);
         }
 
         private void ButtonSiguienteIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
+            Verificación verificación = new Verificación();
+            verificación.Show();
 
-                        Verificación verificación = new Verificación();
-                        verificación.Show();
-
-                        this.Close();
-
+            this.Close();
         }
 
         private void ButtonIngresarIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            
-                    Menú menú = new Menú();
-                    menú.Show();
-
-                    this.Close();
+            var username = "usuario";
+            var contraseña = "contraseña";
+            try
+            {
+                _loginService.RequestLogin(username, contraseña);
+            }
+            catch (CommunicationException ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
+        public void OnLoginSuccess(string guid)
+        {
+            Console.WriteLine(guid);
+            
+            Menú menú = new Menú();
+            menú.Show();
 
+            this.Close();
+        }
 
+        public void OnLoginError(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }
