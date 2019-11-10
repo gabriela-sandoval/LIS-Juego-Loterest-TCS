@@ -15,33 +15,33 @@
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.75"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="buttonIdioma" Content="IDIOMA" HorizontalAlignment="Left" Margin="-1,327,0,0" VerticalAlignment="Top" Width="250" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonIdioma_Click">
+        <Button x:Name="buttonIdioma" Content="IDIOMA" HorizontalAlignment="Left" Margin="1,327,0,0" VerticalAlignment="Top" Width="248" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonIdioma_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.5"/>
             </Button.Background>
         </Button>
-        <Button x:Name="buttonComoJugar" Content="¿CÓMO JUGAR?" HorizontalAlignment="Left" Margin="-1,384,0,0" VerticalAlignment="Top" Width="250" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonComoJugar_Click">
+        <Button x:Name="buttonComoJugar" Content="¿CÓMO JUGAR?" HorizontalAlignment="Left" Margin="1,386,0,0" VerticalAlignment="Top" Width="248" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonComoJugar_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.5"/>
             </Button.Background>
         </Button>
-        <Button Content="LOGROS" HorizontalAlignment="Left" Margin="-1,444,0,0" VerticalAlignment="Top" Width="250" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White">
+        <Button Content="LOGROS" HorizontalAlignment="Left" Margin="1,444,0,0" VerticalAlignment="Top" Width="248" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White">
             <Button.Background>
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.5"/>
             </Button.Background>
         </Button>
-        <Button x:Name="buttonAcercaDe" Content="ACERCA DE" HorizontalAlignment="Left" Margin="-1,502,0,0" VerticalAlignment="Top" Width="250" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonAcercaDe_Click">
+        <Button x:Name="buttonAcercaDe" Content="ACERCA DE" HorizontalAlignment="Left" Margin="1,502,0,0" VerticalAlignment="Top" Width="248" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonAcercaDe_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.5"/>
             </Button.Background>
         </Button>
-        <Button x:Name="buttonSalir" Content="SALIR" HorizontalAlignment="Left" Margin="-1,561,0,0" VerticalAlignment="Top" Width="250" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonSalir_Click">
+        <Button x:Name="buttonSalir" Content="SALIR" HorizontalAlignment="Left" Margin="1,561,0,0" VerticalAlignment="Top" Width="248" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonSalir_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.5"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="130" Margin="56,39,0,0" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.041,0.212" Source="Recursos/usuario.png"/>
-        <Button Content="PUNTAJE" HorizontalAlignment="Left" Margin="0,266,0,0" VerticalAlignment="Top" Width="250" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White">
+        <Image HorizontalAlignment="Left" Height="171" Margin="30,39,0,0" VerticalAlignment="Top" Width="192" RenderTransformOrigin="0.041,0.212" Source="Recursos/imagenUsuarioCamaleon.png"/>
+        <Button Content="PUNTAJE" HorizontalAlignment="Left" Margin="0,266,0,0" VerticalAlignment="Top" Width="248" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White">
             <Button.Background>
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.5"/>
             </Button.Background>
@@ -60,5 +60,6 @@
                 <ImageBrush ImageSource="Recursos/cartaAlAzar.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <TextBox x:Name="textBoxUserName" HorizontalAlignment="Left" Height="51" Margin="8,197,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="240" FontFamily="Calibri Light" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
     </Grid>
 </Window>
