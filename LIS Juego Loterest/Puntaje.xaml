@@ -17,15 +17,15 @@
         </Rectangle>
         <Image HorizontalAlignment="Left" Height="144" Margin="132,48,0,0" VerticalAlignment="Top" Width="158" RenderTransformOrigin="0.041,0.212" Source="Recursos/imagenUsuarioCamaleon.png"/>
         <TextBox x:Name="textBoxUserName" HorizontalAlignment="Left" Height="51" Margin="343,77,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="240" FontFamily="Calibri Light" FontSize="48" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <TextBox x:Name="textBoxUserName_Copy" HorizontalAlignment="Left" Height="51" Margin="939,77,0,0" TextWrapping="Wrap" Text="Puntaje" VerticalAlignment="Top" Width="240" FontFamily="Calibri Light" FontSize="48" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxUserName_Copy" HorizontalAlignment="Left" Margin="858,58,0,0" TextWrapping="Wrap" Text="Puntaje" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="72" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
         <Rectangle HorizontalAlignment="Left" Height="334" Margin="201,239,0,0" VerticalAlignment="Top" Width="387">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#FF6CDC70" Opacity="0.9"/>
+                <SolidColorBrush Color="#FF6CDC70" Opacity="0.75"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="334" Margin="697,239,0,0" VerticalAlignment="Top" Width="387">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#FFF48884" Opacity="0.9"/>
+                <SolidColorBrush Color="#FFF48884" Opacity="0.75"/>
             </Rectangle.Fill>
         </Rectangle>
         <ListBox HorizontalAlignment="Left" Height="216" Margin="220,340,0,0" VerticalAlignment="Top" Width="350"/>

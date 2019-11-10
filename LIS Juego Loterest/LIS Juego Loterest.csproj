@@ -96,6 +96,9 @@
     <Compile Include="Perdiste.xaml.cs">
       <DependentUpon>Perdiste.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Puntaje.xaml.cs">
+      <DependentUpon>Puntaje.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SalaChat.xaml.cs">
       <DependentUpon>SalaChat.xaml</DependentUpon>
     </Compile>
@@ -157,6 +160,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Perdiste.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Puntaje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

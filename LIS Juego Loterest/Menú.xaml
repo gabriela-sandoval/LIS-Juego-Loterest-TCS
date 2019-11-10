@@ -41,7 +41,7 @@
             </Button.Background>
         </Button>
         <Image HorizontalAlignment="Left" Height="171" Margin="30,39,0,0" VerticalAlignment="Top" Width="192" RenderTransformOrigin="0.041,0.212" Source="Recursos/imagenUsuarioCamaleon.png"/>
-        <Button Content="PUNTAJE" HorizontalAlignment="Left" Margin="0,266,0,0" VerticalAlignment="Top" Width="248" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White">
+        <Button x:Name="buttonPuntaje" Content="PUNTAJE" HorizontalAlignment="Left" Margin="0,266,0,0" VerticalAlignment="Top" Width="248" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonPuntaje_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.5"/>
             </Button.Background>

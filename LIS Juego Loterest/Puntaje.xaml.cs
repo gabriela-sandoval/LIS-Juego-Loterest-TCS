@@ -28,5 +28,12 @@ namespace LIS_Juego_Loterest
         {
 
         }
+
+        private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            Menú menú = new Menú();
+            menú.Show();
+            this.Close();
+        }
     }
 }

@@ -63,5 +63,13 @@ namespace LIS_Juego_Loterest
             Salir salir = new Salir();
             salir.ShowDialog();
         }
+
+        private void ButtonPuntaje_Click(object sender, RoutedEventArgs e)
+        {
+            Puntaje puntaje = new Puntaje();
+            puntaje.Show();
+
+            this.Close();
+        }
     }
 }
