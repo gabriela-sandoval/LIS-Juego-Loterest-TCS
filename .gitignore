@@ -351,3 +351,5 @@ MigrationBackup/
 .idea/
 
 LIS Juego Loterest/App.config
+
+Server/App.config
