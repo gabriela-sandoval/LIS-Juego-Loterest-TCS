@@ -57,6 +57,11 @@
     <Compile Include="Carta.cs">
       <DependentUpon>DataModelLoterest.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModelLoterest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModelLoterest.edmx</DependentUpon>
+    </Compile>
     <Compile Include="IService.cs" />
     <Compile Include="Juego.cs">
       <DependentUpon>DataModelLoterest.tt</DependentUpon>

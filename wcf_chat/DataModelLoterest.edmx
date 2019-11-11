@@ -124,6 +124,11 @@
           <Property Name="contraseñaJugador" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="confirmacionJugador" Type="Int32" />
           <Property Name="codigoJugador" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Puntajes" Relationship="JuegoLoterestModel.JugadorPuntaje" FromRole="Jugador" ToRole="Puntaje" />
+          <NavigationProperty Name="MensajeChats" Relationship="JuegoLoterestModel.JugadorMensajeChat" FromRole="Jugador" ToRole="MensajeChat" />
+          <NavigationProperty Name="Logros" Relationship="JuegoLoterestModel.JugadorLogro" FromRole="Jugador" ToRole="Logro" />
+          <NavigationProperty Name="Sala" Relationship="JuegoLoterestModel.SalaJugador" FromRole="Jugador" ToRole="Sala" />
+          <Property Name="Sala_idSala" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="JuegoLoterestEntitiesApp" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Jugador" EntityType="Self.Jugador" />
@@ -165,6 +170,42 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <AssociationSet Name="JugadorPuntaje" Association="JuegoLoterestModel.JugadorPuntaje">
+            <End Role="Jugador" EntitySet="Jugador" />
+            <End Role="Puntaje" EntitySet="Puntajes" />
+          </AssociationSet>
+          <AssociationSet Name="JugadorMensajeChat" Association="JuegoLoterestModel.JugadorMensajeChat">
+            <End Role="Jugador" EntitySet="Jugador" />
+            <End Role="MensajeChat" EntitySet="MensajeChats" />
+          </AssociationSet>
+          <AssociationSet Name="JugadorLogro" Association="JuegoLoterestModel.JugadorLogro">
+            <End Role="Jugador" EntitySet="Jugador" />
+            <End Role="Logro" EntitySet="Logroes" />
+          </AssociationSet>
+          <AssociationSet Name="SalaJugador" Association="JuegoLoterestModel.SalaJugador">
+            <End Role="Jugador" EntitySet="Jugador" />
+            <End Role="Sala" EntitySet="Salas" />
+          </AssociationSet>
+          <AssociationSet Name="SalaJuego" Association="JuegoLoterestModel.SalaJuego">
+            <End Role="Sala" EntitySet="Salas" />
+            <End Role="Juego" EntitySet="Juegoes" />
+          </AssociationSet>
+          <AssociationSet Name="JuegoTablero" Association="JuegoLoterestModel.JuegoTablero">
+            <End Role="Juego" EntitySet="Juegoes" />
+            <End Role="Tablero" EntitySet="Tableroes" />
+          </AssociationSet>
+          <AssociationSet Name="TableroCarta" Association="JuegoLoterestModel.TableroCarta">
+            <End Role="Tablero" EntitySet="Tableroes" />
+            <End Role="Carta" EntitySet="Cartas" />
+          </AssociationSet>
+          <AssociationSet Name="JuegoBaraja" Association="JuegoLoterestModel.JuegoBaraja">
+            <End Role="Juego" EntitySet="Juegoes" />
+            <End Role="Baraja" EntitySet="Barajas" />
+          </AssociationSet>
+          <AssociationSet Name="CartaBaraja" Association="JuegoLoterestModel.CartaBaraja">
+            <End Role="Carta" EntitySet="Cartas" />
+            <End Role="Baraja" EntitySet="Barajas" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Carta">
           <Key>
@@ -173,6 +214,10 @@
           <Property Name="idCarta" Type="Int32" Nullable="false" />
           <Property Name="nombreCarta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="rutaImagenCarta" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tablero" Relationship="JuegoLoterestModel.TableroCarta" FromRole="Carta" ToRole="Tablero" />
+          <Property Name="Tablero_idTablero" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Baraja" Relationship="JuegoLoterestModel.CartaBaraja" FromRole="Carta" ToRole="Baraja" />
+          <Property Name="Baraja_idBaraja" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Puntaje">
           <Key>
@@ -180,12 +225,16 @@
           </Key>
           <Property Name="idPuntaje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="totalPuntaje" Type="String" Nullable="false" />
+          <NavigationProperty Name="Jugador" Relationship="JuegoLoterestModel.JugadorPuntaje" FromRole="Puntaje" ToRole="Jugador" />
+          <Property Name="Jugador_idJugador" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Baraja">
           <Key>
             <PropertyRef Name="idBaraja" />
           </Key>
           <Property Name="idBaraja" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Juego" Relationship="JuegoLoterestModel.JuegoBaraja" FromRole="Baraja" ToRole="Juego" />
+          <NavigationProperty Name="Cartas" Relationship="JuegoLoterestModel.CartaBaraja" FromRole="Baraja" ToRole="Carta" />
         </EntityType>
         <EntityType Name="Juego">
           <Key>
@@ -195,6 +244,9 @@
           <Property Name="nombreJuego" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="informacionDeJuego" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="tiempoJuego" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Sala" Relationship="JuegoLoterestModel.SalaJuego" FromRole="Juego" ToRole="Sala" />
+          <NavigationProperty Name="Tablero" Relationship="JuegoLoterestModel.JuegoTablero" FromRole="Juego" ToRole="Tablero" />
+          <NavigationProperty Name="Baraja" Relationship="JuegoLoterestModel.JuegoBaraja" FromRole="Juego" ToRole="Baraja" />
         </EntityType>
         <EntityType Name="Logro">
           <Key>
@@ -205,6 +257,8 @@
           <Property Name="descripcionLogro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="rutaImagenLogro" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="desbloqueoLogro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Jugador" Relationship="JuegoLoterestModel.JugadorLogro" FromRole="Logro" ToRole="Jugador" />
+          <Property Name="Jugador_idJugador" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="MensajeChat">
           <Key>
@@ -212,12 +266,16 @@
           </Key>
           <Property Name="idMensajeChat" Type="Int32" Nullable="false" />
           <Property Name="horaMensajeChat" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Jugador" Relationship="JuegoLoterestModel.JugadorMensajeChat" FromRole="MensajeChat" ToRole="Jugador" />
+          <Property Name="Jugador_idJugador" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Sala">
           <Key>
             <PropertyRef Name="idSala" />
           </Key>
           <Property Name="idSala" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Jugadores" Relationship="JuegoLoterestModel.SalaJugador" FromRole="Sala" ToRole="Jugador" />
+          <NavigationProperty Name="Juego" Relationship="JuegoLoterestModel.SalaJuego" FromRole="Sala" ToRole="Juego" />
         </EntityType>
         <EntityType Name="Tablero">
           <Key>
@@ -225,6 +283,8 @@
           </Key>
           <Property Name="idTablero" Type="Int32" Nullable="false" />
           <Property Name="casillaTablero" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Juego" Relationship="JuegoLoterestModel.JuegoTablero" FromRole="Tablero" ToRole="Juego" />
+          <NavigationProperty Name="Cartas" Relationship="JuegoLoterestModel.TableroCarta" FromRole="Tablero" ToRole="Carta" />
         </EntityType>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -237,6 +297,90 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <Association Name="JugadorPuntaje">
+          <End Type="JuegoLoterestModel.Jugador" Role="Jugador" Multiplicity="1" />
+          <End Type="JuegoLoterestModel.Puntaje" Role="Puntaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugador">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Puntaje">
+              <PropertyRef Name="Jugador_idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JugadorMensajeChat">
+          <End Type="JuegoLoterestModel.Jugador" Role="Jugador" Multiplicity="1" />
+          <End Type="JuegoLoterestModel.MensajeChat" Role="MensajeChat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugador">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="MensajeChat">
+              <PropertyRef Name="Jugador_idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JugadorLogro">
+          <End Type="JuegoLoterestModel.Jugador" Role="Jugador" Multiplicity="1" />
+          <End Type="JuegoLoterestModel.Logro" Role="Logro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugador">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Logro">
+              <PropertyRef Name="Jugador_idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SalaJugador">
+          <End Type="JuegoLoterestModel.Jugador" Role="Jugador" Multiplicity="*" />
+          <End Type="JuegoLoterestModel.Sala" Role="Sala" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="idSala" />
+            </Principal>
+            <Dependent Role="Jugador">
+              <PropertyRef Name="Sala_idSala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SalaJuego">
+          <End Type="JuegoLoterestModel.Sala" Role="Sala" Multiplicity="1" />
+          <End Type="JuegoLoterestModel.Juego" Role="Juego" Multiplicity="1" />
+        </Association>
+        <Association Name="JuegoTablero">
+          <End Type="JuegoLoterestModel.Juego" Role="Juego" Multiplicity="1" />
+          <End Type="JuegoLoterestModel.Tablero" Role="Tablero" Multiplicity="1" />
+        </Association>
+        <Association Name="TableroCarta">
+          <End Type="JuegoLoterestModel.Tablero" Role="Tablero" Multiplicity="1" />
+          <End Type="JuegoLoterestModel.Carta" Role="Carta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tablero">
+              <PropertyRef Name="idTablero" />
+            </Principal>
+            <Dependent Role="Carta">
+              <PropertyRef Name="Tablero_idTablero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JuegoBaraja">
+          <End Type="JuegoLoterestModel.Juego" Role="Juego" Multiplicity="1" />
+          <End Type="JuegoLoterestModel.Baraja" Role="Baraja" Multiplicity="1" />
+        </Association>
+        <Association Name="CartaBaraja">
+          <End Type="JuegoLoterestModel.Carta" Role="Carta" Multiplicity="*" />
+          <End Type="JuegoLoterestModel.Baraja" Role="Baraja" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Baraja">
+              <PropertyRef Name="idBaraja" />
+            </Principal>
+            <Dependent Role="Carta">
+              <PropertyRef Name="Baraja_idBaraja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -360,6 +504,28 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="521527cfc1b94eeabf607149caccd190" Name="Diagram1">
+        <EntityTypeShape EntityType="JuegoLoterestModel.Jugador" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JuegoLoterestModel.Carta" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="JuegoLoterestModel.Puntaje" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JuegoLoterestModel.Baraja" Width="1.5" PointX="10.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="JuegoLoterestModel.Juego" Width="1.5" PointX="7.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JuegoLoterestModel.Logro" Width="1.5" PointX="0.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JuegoLoterestModel.MensajeChat" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JuegoLoterestModel.Sala" Width="1.5" PointX="5.375" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JuegoLoterestModel.Tablero" Width="1.5" PointX="5.5" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="JuegoLoterestModel.JugadorPuntaje" />
+        <AssociationConnector Association="JuegoLoterestModel.JugadorMensajeChat" />
+        <AssociationConnector Association="JuegoLoterestModel.JugadorLogro" />
+        <AssociationConnector Association="JuegoLoterestModel.SalaJugador" />
+        <AssociationConnector Association="JuegoLoterestModel.SalaJuego" />
+        <AssociationConnector Association="JuegoLoterestModel.JuegoTablero" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="JuegoLoterestModel.TableroCarta" />
+        <AssociationConnector Association="JuegoLoterestModel.JuegoBaraja" />
+        <AssociationConnector Association="JuegoLoterestModel.CartaBaraja" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>

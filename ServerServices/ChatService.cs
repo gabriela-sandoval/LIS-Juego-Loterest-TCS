@@ -78,10 +78,7 @@ namespace ServerServices
 
             Console.WriteLine($"{client.Username}: {message}");
 
-            // Todos los demás clientes
-            //var clients = _chatClients.Where(c => c.SessionId != sessionId);
-
-            // Enviar mensaje a los demás clientes
+            // Enviar mensaje a todos los clientes
             foreach (var c in _chatClients)
             {
                 var proxy = c.GetCallbackProxy();
