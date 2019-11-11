@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServices
+namespace wcf_chat
 {
     using System;
     using System.Collections.Generic;

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatClient"
         mc:Ignorable="d"
-        Title="LOTEREST" Height="656" Width="1290" Loaded="Window_Loaded" Closing="Window_Closing" Icon="Recursos/logoLoterest.png" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="LOTEREST" Height="656" Width="1290" Closing="Window_Closing" Icon="Recursos/logoLoterest.png" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Background>
         <ImageBrush ImageSource="Recursos/fondoPrincipal.png"/>
     </Window.Background>
@@ -45,9 +45,9 @@
                 <SolidColorBrush Color="White" Opacity="0.75"/>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox x:Name="listBoxJugadoresDisponibles" HorizontalAlignment="Left" Height="380" Margin="367,167,0,0" VerticalAlignment="Top" Width="810" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="18" SelectionChanged="ListBoxJugadoresDisponibles_SelectionChanged"/>
+        <ListBox x:Name="listBoxJugadoresDisponibles" HorizontalAlignment="Left" Height="380" Margin="367,167,0,0" VerticalAlignment="Top" Width="810" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="18"/>
         <TextBox x:Name="textBoxUserName_Copy" HorizontalAlignment="Left" Height="73" Margin="346,41,0,0" TextWrapping="Wrap" Text="Jugadores disponibles" VerticalAlignment="Top" Width="447" FontFamily="Calibri Light" FontSize="48" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <Button Content="Jugar" Grid.Column="1" HorizontalAlignment="Left" Margin="69.667,41,0,0" VerticalAlignment="Top" Width="167" Height="73" FontFamily="Calibri Light" FontSize="22" Background="White" Foreground="#FF322D56" BorderBrush="White" Click="Button_Click_1"/>
+        <Button Content="Jugar" Grid.Column="1" HorizontalAlignment="Left" Margin="69.667,41,0,0" VerticalAlignment="Top" Width="167" Height="73" FontFamily="Calibri Light" FontSize="22" Background="White" Foreground="#FF322D56" BorderBrush="White"/>
 
     </Grid>
 </Window>

@@ -1,127 +1,100 @@
-﻿using ChatClient.ServiceChat;
+﻿using System.Collections.ObjectModel;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Input;
+using ServerServices.Interface;
 
 namespace ChatClient
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IServiceChatCallback
+    public partial class MainWindow : IChatServiceCallback
     {
-        bool isConnected = false;
-        ServiceChatClient client;
-        int ID;
+        private readonly IChatService _chatService;
+        private readonly ObservableCollection<string> _clients = new ObservableCollection<string>();
+        private readonly ObservableCollection<string> _messages = new ObservableCollection<string>();
+        private string _sessionId;
+        
         public MainWindow()
         {
             InitializeComponent();
+            var duplexChannelFactory = new DuplexChannelFactory<IChatService>(new InstanceContext(this), "*");
+            _chatService = duplexChannelFactory.CreateChannel();
+            listBoxJugadoresDisponibles.ItemsSource = _clients;
+            listBoxChat.ItemsSource = _messages;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private bool IsConnected()
         {
-
-        }
-
-        void ConnectUser()
-        {
-            if (!isConnected)
-            {
-                try
-                {
-                    client = new ServiceChatClient(new System.ServiceModel.InstanceContext(this));
-                    ID = client.Connect(textBoxUserName.Text);
-                    textBoxUserName.IsEnabled = false;
-                    buttonConectadoDesconectado.Content = "Desconectarme";
-                    isConnected = true;
-                }
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show("Error al conectar con el host, no se encuentra disponible, intente en otro momento.", "Error de host");
-                }
-            }
-        }
-
-        void DisconnectUser()
-        {
-            if (isConnected)
-            {
-                client.Disconnect(ID);
-                client = null;
-                textBoxUserName.IsEnabled = true;
-                buttonConectadoDesconectado.Content = "Conectarme";
-                isConnected = false;
-            }
-
+            return !string.IsNullOrEmpty(_sessionId);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (isConnected)
+            if (IsConnected())
             {
-                DisconnectUser();
-                listBoxJugadoresDisponibles.Items.Remove(textBoxUserName.Text);
-                listBoxJugadoresDisponibles.ScrollIntoView(listBoxJugadoresDisponibles.Items[listBoxJugadoresDisponibles.Items.Count - 1]);
+                _chatService.Disconnect(_sessionId);
+                _sessionId = null;
+                _clients.Clear();
+                _messages.Clear();
             }
             else
             {
-                ConnectUser();
-                listBoxJugadoresDisponibles.Items.Add(textBoxUserName.Text);
-                listBoxJugadoresDisponibles.ScrollIntoView(listBoxJugadoresDisponibles.Items[listBoxJugadoresDisponibles.Items.Count - 1]);
+                var username = textBoxUserName.Text;
+                _sessionId = _chatService.ConnectWithUsername(username);
+                _messages.Add($"{username} se ha unido al chat.");
+                var connectedUsers = _chatService.GetConnectedUsers();
+                foreach (var connectedUser in connectedUsers)
+                {
+                    _clients.Add(connectedUser);
+                }
             }
-
-            //using (Model baseDeDatos = new Model.JuegoLoterest())
-            //{
-            //    var oJugador = new Model.Jugador();
-            //    oJugador.nombre = textBoxNombreDeUsuarioCrearCuenta.Text;
-            //    oUsuario.email = textBoxCorreoElectronicoCrearCuenta.Text;
-            //    oUsuario.contrasena = PasswordBoxContraseniaCrearCuenta.Password;
-
-            //    db.Usuarios.Add(oUsuario);
-            //    db.SaveChanges();
-            //}
-
-        }
-
-        public void MsgCallback(string msg)
-        {
-            listBoxChat.Items.Add(msg);
-            listBoxChat.ScrollIntoView(listBoxChat.Items[listBoxChat.Items.Count - 1]);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            DisconnectUser();
+            _chatService.Disconnect(_sessionId);
         }
 
         private void TextBoxMensaje_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                if (client != null)
-                {
-                    client.SendMsg(textBoxMensaje.Text, ID);
-                    textBoxMensaje.Text = string.Empty;
-                }
+                ButtonEnviar_Click(sender, e);
             }
         }
 
         private void ButtonEnviar_Click(object sender, RoutedEventArgs e)
         {
-            if (client != null)
+            var message = textBoxMensaje.Text;
+            if (!string.IsNullOrWhiteSpace(message))
             {
-                client.SendMsg(textBoxMensaje.Text, ID);
-                textBoxMensaje.Text = string.Empty;
+                _chatService.SendMessage(_sessionId, message);
             }
         }
 
-        private void ListBoxJugadoresDisponibles_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        public void OnPlayerConnect(string username)
         {
-            ConnectUser();
+            _clients.Add(username);
+            AddMessageToChat($"{username} se conectó.");
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        public void OnPlayerMessage(string username, string message)
         {
-            
+            AddMessageToChat($"{username}: {message}");
+        }
+
+        public void OnPlayerDisconnect(string username)
+        {
+            _clients.Remove(username);
+            AddMessageToChat($"{username} se desconectó.");
+        }
+
+        private void AddMessageToChat(string message)
+        {
+            _messages.Add(message);
+            listBoxChat.ScrollIntoView(listBoxChat.Items[listBoxChat.Items.Count - 1]);
         }
     }
 }

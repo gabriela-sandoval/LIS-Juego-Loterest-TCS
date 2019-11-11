@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServices
+namespace wcf_chat
 {
     using System;
     using System.Collections.Generic;
     
     public partial class Jugador
     {
-        public int idJugador { get; set; }
         public string nombreJugador { get; set; }
+        public int idJugador { get; set; }
         public string correoElectronicoJugador { get; set; }
         public string contraseñaJugador { get; set; }
         public Nullable<int> confirmacionJugador { get; set; }
