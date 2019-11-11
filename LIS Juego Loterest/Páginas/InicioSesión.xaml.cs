@@ -3,6 +3,7 @@ using System.ServiceModel;
 using LIS_Juego_Loterest.Controles;
 using LIS_Juego_Loterest.Util;
 using ServerServices.Interface;
+using ServerServices.Model.Enum;
 
 namespace LIS_Juego_Loterest.Páginas
 {
@@ -35,7 +36,7 @@ namespace LIS_Juego_Loterest.Páginas
             }
             catch (CommunicationException ex)
             {
-                OnLoginError(ex.Message);
+                OnLoginError(LoginRequestReplyCode.GeneralError, ex.Message);
             }
         }
 
@@ -46,7 +47,7 @@ namespace LIS_Juego_Loterest.Páginas
             Console.WriteLine(sessionId);
         }
 
-        public void OnLoginError(string message)
+        public void OnLoginError(LoginRequestReplyCode replyCode, string message)
         {
             // Rehabilitar campos de texto y botón
             LoginControl.EmailTextBox.IsEnabled = true;
@@ -54,6 +55,16 @@ namespace LIS_Juego_Loterest.Páginas
             LoginControl.LoginButton.IsEnabled = true;
             
             Console.WriteLine(message);
+        }
+
+        public void OnRegisterResponse(RegisterRequestReplyCode replyCode, string message)
+        {
+            
+        }
+
+        public void OnVerificationResponse(VerificationRequestReplyCode replyCode)
+        {
+            
         }
     }
 }

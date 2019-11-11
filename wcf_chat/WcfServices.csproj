@@ -57,21 +57,6 @@
     <Compile Include="Carta.cs">
       <DependentUpon>DataModelLoterest.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataModelLoterest.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModelLoterest.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModelLoterest.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModelLoterest.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModelLoterest.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModelLoterest.edmx</DependentUpon>
-    </Compile>
     <Compile Include="IService.cs" />
     <Compile Include="Juego.cs">
       <DependentUpon>DataModelLoterest.tt</DependentUpon>
@@ -104,20 +89,12 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataModelLoterest.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataModelLoterest.edmx.diagram">
-      <DependentUpon>DataModelLoterest.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataModelLoterest.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModelLoterest.edmx</DependentUpon>
-      <LastGenOutput>DataModelLoterest.Context.cs</LastGenOutput>
-    </Content>
     <Content Include="DataModelLoterest.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataModelLoterest.edmx</DependentUpon>

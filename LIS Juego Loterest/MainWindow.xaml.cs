@@ -1,18 +1,15 @@
 ﻿using System;
 using System.ServiceModel;
 using System.Windows;
-using LIS_Juego_Loterest.Controles;
 using LIS_Juego_Loterest.Util;
-using ServerServices;
 using ServerServices.Interface;
-using ServerServices.Model;
 
 namespace LIS_Juego_Loterest
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : ILoginServiceCallback
+    public partial class MainWindow
     {
         /// <summary>
         ///     Interfaz del servicio de Login que se conecta al servidor.
@@ -45,21 +42,6 @@ namespace LIS_Juego_Loterest
             {
                 Console.WriteLine(ex);
             }
-        }
-
-        public void OnLoginSuccess(string sessionId)
-        {
-            Console.WriteLine(sessionId);
-            
-            Menú menú = new Menú();
-            menú.Show();
-
-            this.Close();
-        }
-
-        public void OnLoginError(string message)
-        {
-            Console.WriteLine(message);
         }
     }
 }
