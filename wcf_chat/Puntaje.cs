@@ -15,6 +15,6 @@ namespace WcfServices
     public partial class Puntaje
     {
         public int idPuntaje { get; set; }
-        public int totalPuntaje { get; set; }
+        public string totalPuntaje { get; set; }
     }
 }

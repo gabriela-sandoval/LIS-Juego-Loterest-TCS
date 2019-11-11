@@ -347,3 +347,11 @@ healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
+
+.idea/
+
+LIS Juego Loterest/App.config
+
+Server/App.config
+
+ChatClient/App.config

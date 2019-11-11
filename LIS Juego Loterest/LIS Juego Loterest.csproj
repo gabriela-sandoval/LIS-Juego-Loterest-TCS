@@ -78,6 +78,9 @@
       <DependentUpon>ComoJugar.xaml</DependentUpon>
     </Compile>
     <Compile Include="ConexionBaseDeDatos.cs" />
+    <Compile Include="Controles\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ganaste.xaml.cs">
       <DependentUpon>Ganaste.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,9 @@
     </Compile>
     <Compile Include="Logros.xaml.cs">
       <DependentUpon>Logros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Loterest.xaml.cs">
+      <DependentUpon>Loterest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Loteria.xaml.cs">
       <DependentUpon>Loteria.xaml</DependentUpon>
@@ -105,9 +111,13 @@
     <Compile Include="Salir.xaml.cs">
       <DependentUpon>Salir.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Páginas\InicioSesión.xaml.cs">
+      <DependentUpon>InicioSesión.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tablero.xaml.cs">
       <DependentUpon>Tablero.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util\ClientFactory.cs" />
     <Compile Include="Verificación.xaml.cs">
       <DependentUpon>Verificación.xaml</DependentUpon>
     </Compile>
@@ -127,6 +137,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controles\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ganaste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Logros.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Loterest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,6 +190,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Salir.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Páginas\InicioSesión.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,6 +284,10 @@
     <ProjectReference Include="..\ChatHost\ChatHost.csproj">
       <Project>{fc45b876-7b87-4ac9-ba64-47ba9c69be36}</Project>
       <Name>ChatHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerServices\ServerServices.csproj">
+      <Project>{aa1c4ddf-8bb2-46e9-b8d2-928f9935af06}</Project>
+      <Name>ServerServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\wcf_chat\WcfServices.csproj">
       <Project>{6cefeb18-3b2f-4270-8151-d9cfb0cff816}</Project>
