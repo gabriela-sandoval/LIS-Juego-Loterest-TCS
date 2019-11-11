@@ -72,11 +72,17 @@
       <DependentUpon>Carta.xaml</DependentUpon>
     </Compile>
     <Compile Include="ConexionBaseDeDatos.cs" />
+    <Compile Include="Controles\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ganaste.xaml.cs">
       <DependentUpon>Ganaste.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logros.xaml.cs">
       <DependentUpon>Logros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Loterest.xaml.cs">
+      <DependentUpon>Loterest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Loteria.xaml.cs">
       <DependentUpon>Loteria.xaml</DependentUpon>
@@ -86,6 +92,9 @@
     </Compile>
     <Compile Include="Perdiste.xaml.cs">
       <DependentUpon>Perdiste.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Páginas\InicioSesión.xaml.cs">
+      <DependentUpon>InicioSesión.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tablero.xaml.cs">
       <DependentUpon>Tablero.xaml</DependentUpon>
@@ -102,11 +111,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controles\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ganaste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Logros.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Loterest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Perdiste.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Páginas\InicioSesión.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
