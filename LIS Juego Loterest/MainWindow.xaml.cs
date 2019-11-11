@@ -1,8 +1,4 @@
-﻿using System;
-using System.ServiceModel;
-using System.Windows;
-using LIS_Juego_Loterest.Util;
-using ServerServices.Interface;
+﻿using System.Windows;
 
 namespace LIS_Juego_Loterest
 {
@@ -11,15 +7,10 @@ namespace LIS_Juego_Loterest
     /// </summary>
     public partial class MainWindow
     {
-        /// <summary>
-        ///     Interfaz del servicio de Login que se conecta al servidor.
-        /// </summary>
-        private readonly ILoginService _loginService;
         
         public MainWindow()
         {
             InitializeComponent();
-            _loginService = ClientFactory.CreateDuplexChannel<ILoginService, ILoginServiceCallback>(this);
         }
 
         private void ButtonSiguienteIniciarSesion_Click(object sender, RoutedEventArgs e)
@@ -34,14 +25,6 @@ namespace LIS_Juego_Loterest
         {
             var username = "usuario";
             var contraseña = "contraseña";
-            try
-            {
-                _loginService.LoginRequest(username, contraseña);
-            }
-            catch (CommunicationException ex)
-            {
-                Console.WriteLine(ex);
-            }
         }
     }
 }
