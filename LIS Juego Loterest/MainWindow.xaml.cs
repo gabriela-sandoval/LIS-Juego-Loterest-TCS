@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ServiceModel;
 using System.Windows;
+using LIS_Juego_Loterest.Controles;
 using LIS_Juego_Loterest.Util;
 using ServerServices;
 using ServerServices.Interface;
@@ -38,7 +39,7 @@ namespace LIS_Juego_Loterest
             var contraseña = "contraseña";
             try
             {
-                _loginService.RequestLogin(username, contraseña);
+                _loginService.LoginRequest(username, contraseña);
             }
             catch (CommunicationException ex)
             {
@@ -46,9 +47,9 @@ namespace LIS_Juego_Loterest
             }
         }
 
-        public void OnLoginSuccess(string guid)
+        public void OnLoginSuccess(string sessionId)
         {
-            Console.WriteLine(guid);
+            Console.WriteLine(sessionId);
             
             Menú menú = new Menú();
             menú.Show();
