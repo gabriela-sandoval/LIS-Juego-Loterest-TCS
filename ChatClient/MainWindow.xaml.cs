@@ -32,29 +32,36 @@ namespace ChatClient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (IsConnected())
+            try
             {
-                _chatService.Disconnect(_sessionId);
-                _sessionId = null;
-                _clients.Clear();
-                _messages.Clear();
-            }
-            else
-            {
-                var username = textBoxUserName.Text;
-                _sessionId = _chatService.ConnectWithUsername(username);
-                _messages.Add($"{username} se ha unido al chat.");
-                var connectedUsers = _chatService.GetConnectedUsers();
-                foreach (var connectedUser in connectedUsers)
+                if (IsConnected())
                 {
-                    _clients.Add(connectedUser);
+                    _chatService.Disconnect(_sessionId);
+                    _sessionId = null;
+                    _clients.Clear();
+                    _messages.Clear();
                 }
+                else
+                {
+                    var username = textBoxUserName.Text;
+                    _sessionId = _chatService.ConnectWithUsername(username);
+                    _messages.Add($"{username} se ha unido al chat.");
+                    var connectedUsers = _chatService.GetConnectedUsers();
+                    foreach (var connectedUser in connectedUsers)
+                    {
+                        _clients.Add(connectedUser);
+                    }
+                }
+            } catch
+            {
+                MessageBox.Show("El servidor no se encuentra disponible, intente nuevamente", "Servidor no encontrado", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             _chatService.Disconnect(_sessionId);
+
         }
 
         private void TextBoxMensaje_KeyDown_1(object sender, KeyEventArgs e)
@@ -71,6 +78,7 @@ namespace ChatClient
             if (!string.IsNullOrWhiteSpace(message))
             {
                 _chatService.SendMessage(_sessionId, message);
+                textBoxMensaje.Clear();
             }
         }
 
