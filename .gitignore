@@ -355,3 +355,9 @@ LIS Juego Loterest/App.config
 Server/App.config
 
 ChatClient/App.config
+
+DataModel/app.config
+
+ServerServices/App.config
+
+wcf_chat/app.config
