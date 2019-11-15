@@ -15,13 +15,19 @@ using System.Windows.Shapes;
 namespace LIS_Juego_Loterest
 {
     /// <summary>
-    /// Lógica de interacción para AcercaDe.xaml
+    /// Lógica de interacción para Carta.xaml
     /// </summary>
-    public partial class AcercaDe : Window
+    public partial class Carta : Page
     {
-        public AcercaDe()
+        public Carta()
         {
             InitializeComponent();
+        }
+
+        private void ButtonSeleccionarTablero_Click(object sender, RoutedEventArgs e)
+        {
+            //Al_azar azar = new Al_azar();
+            //azar.Show();
         }
     }
 }

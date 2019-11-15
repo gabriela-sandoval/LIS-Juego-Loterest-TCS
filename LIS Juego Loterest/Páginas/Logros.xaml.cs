@@ -15,25 +15,13 @@ using System.Windows.Shapes;
 namespace LIS_Juego_Loterest
 {
     /// <summary>
-    /// Lógica de interacción para Puntaje.xaml
+    /// Lógica de interacción para Logros.xaml
     /// </summary>
-    public partial class Puntaje : Window
+    public partial class Logros : Page
     {
-        public Puntaje()
+        public Logros()
         {
             InitializeComponent();
-        }
-
-        private void TextBoxUserName_Copy1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
-        {
-            Menú menú = new Menú();
-            menú.Show();
-            this.Close();
         }
     }
 }

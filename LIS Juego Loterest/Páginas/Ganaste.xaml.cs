@@ -15,13 +15,19 @@ using System.Windows.Shapes;
 namespace LIS_Juego_Loterest
 {
     /// <summary>
-    /// Lógica de interacción para Perdiste.xaml
+    /// Lógica de interacción para Ganaste.xaml
     /// </summary>
-    public partial class Perdiste : Window
+    public partial class Ganaste : Page
     {
-        public Perdiste()
+        public Ganaste()
         {
             InitializeComponent();
+        }
+
+        private void ButtonAceptar_Click(object sender, RoutedEventArgs e)
+        {
+            //Menú menu = new Menú();
+            //menu.Show();
         }
     }
 }

@@ -15,13 +15,19 @@ using System.Windows.Shapes;
 namespace LIS_Juego_Loterest
 {
     /// <summary>
-    /// Lógica de interacción para Logros.xaml
+    /// Lógica de interacción para Verificación.xaml
     /// </summary>
-    public partial class Logros : Window
+    public partial class Verificación : Page
     {
-        public Logros()
+        public Verificación()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Menú menu = new Menú();
+            //menu.ShowDialog();
         }
     }
 }

@@ -1,14 +1,14 @@
-﻿<Window x:Name="wiondowGanaste" x:Class="LIS_Juego_Loterest.Ganaste"
+﻿<Page x:Name="wiondowGanaste" x:Class="LIS_Juego_Loterest.Ganaste"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LIS_Juego_Loterest"
         mc:Ignorable="d"
-        Title="Ganaste" Height="658" Width="1290" WindowState="Maximized" WindowStartupLocation="CenterScreen">
-    <Window.Background>
+        Title="Ganaste" Height="658" Width="1290" >
+    <Page.Background>
         <ImageBrush ImageSource="Recursos/fondoPrincipal.png"/>
-    </Window.Background>
+    </Page.Background>
     <Grid>
         <Image HorizontalAlignment="Left" Height="428" Margin="44,10,0,0" VerticalAlignment="Top" Width="1168" Source="Recursos/ganaste.png" Stretch="UniformToFill"/>
         <Image HorizontalAlignment="Left" Height="269" Margin="245,122,0,0" VerticalAlignment="Top" Width="801" Source="Recursos/FinDeJuego.png" RenderTransformOrigin="0.495,0.749"/>
@@ -18,4 +18,4 @@
         <Button x:Name="buttonAceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="513,523,0,0" VerticalAlignment="Top" Width="171" BorderBrush="White" Foreground="#FF04547C" Height="63" FontFamily="Calibri Light" FontSize="36" Click="ButtonAceptar_Click"/>
 
     </Grid>
-</Window>
+</Page>

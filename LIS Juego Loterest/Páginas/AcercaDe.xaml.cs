@@ -15,19 +15,13 @@ using System.Windows.Shapes;
 namespace LIS_Juego_Loterest
 {
     /// <summary>
-    /// Lógica de interacción para Al_azar.xaml
+    /// Lógica de interacción para AcercaDe.xaml
     /// </summary>
-    public partial class Al_azar : Window
+    public partial class AcercaDe : Page
     {
-        public Al_azar()
+        public AcercaDe()
         {
             InitializeComponent();
-        }
-
-        private void ButtonLoteria_Click(object sender, RoutedEventArgs e)
-        {
-            Perdiste perdiste = new Perdiste();
-            perdiste.Show();
         }
     }
 }

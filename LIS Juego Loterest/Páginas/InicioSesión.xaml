@@ -9,7 +9,7 @@
 
     <Grid >
         <Grid.Background>
-            <ImageBrush ImageSource="../Recursos/fondoPrincipal.png" Stretch="UniformToFill" TileMode="None" ViewportUnits="RelativeToBoundingBox" ViewboxUnits="RelativeToBoundingBox"/>
+            <ImageBrush ImageSource="../Resources/fondoPrincipal.png" Stretch="UniformToFill" TileMode="None" ViewportUnits="RelativeToBoundingBox" ViewboxUnits="RelativeToBoundingBox"/>
         </Grid.Background>
         <Rectangle Height="150" Margin="0,-2,0,0" Stroke="Black" VerticalAlignment="Top">
             <Rectangle.Fill>
@@ -17,7 +17,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Image HorizontalAlignment="Left" Height="360" Margin="160,193,0,0" VerticalAlignment="Top" Width="243" Source="../Recursos/logoLoterest.png" RenderTransformOrigin="0.359,0.394"/>
+        <Image HorizontalAlignment="Left" Height="360" Margin="160,193,0,0" VerticalAlignment="Top" Width="243" Source="../Resources/logoLoterest.png" RenderTransformOrigin="0.359,0.394"/>
         <Rectangle HorizontalAlignment="Left" Height="415" Margin="577,187,0,0" VerticalAlignment="Top" Width="376">
             <Rectangle.Fill>
                 <SolidColorBrush Color="Black" Opacity="0.46"/>
@@ -28,7 +28,7 @@
                 <SolidColorBrush Color="White" Opacity="0.8"/>
             </TextBox.Background>
         </TextBox>
-        <Image Grid.Column="0" Source="../Recursos/cartasFondo.png" HorizontalAlignment="Right" Width="178" Height="411" VerticalAlignment="Bottom"/>
+        <Image Grid.Column="0" Source="../Resources/cartasFondo.png" HorizontalAlignment="Right" Width="178" Height="411" VerticalAlignment="Bottom"/>
 
         <TextBox x:Name="textBoxCorreoElectronicoCrearCuenta" HorizontalAlignment="Left" Height="30" Margin="644,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" BorderBrush="{x:Null}" Foreground="#FF04547C" SelectionBrush="#FFCCE4E4" FontFamily="Calibri Light" FontSize="18">
             <TextBox.Background>

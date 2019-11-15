@@ -17,7 +17,7 @@ namespace LIS_Juego_Loterest
     /// <summary>
     /// Lógica de interacción para Menú.xaml
     /// </summary>
-    public partial class Menú : Window
+    public partial class Menú : Page
     {
         public Menú()
         {
@@ -26,50 +26,50 @@ namespace LIS_Juego_Loterest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Tablero tablero = new Tablero();
-            tablero.Show();
+            //Tablero tablero = new Tablero();
+            //tablero.Show();
 
-            this.Close();
+            //this.Close();
         }
 
         private void ButtonAlAzar_Click(object sender, RoutedEventArgs e)
         {
-            Carta carta = new Carta();
-            carta.Show();
+            //Carta carta = new Carta();
+            //carta.Show();
 
-            this.Close();
+            //this.Close();
         }
 
         private void ButtonIdioma_Click(object sender, RoutedEventArgs e)
         {
-            Idioma idioma = new Idioma();
-            idioma.ShowDialog();
+            //Idioma idioma = new Idioma();
+            //idioma.ShowDialog();
         }
 
         private void ButtonComoJugar_Click(object sender, RoutedEventArgs e)
         {
-            ComoJugar comoJugar = new ComoJugar();
-            comoJugar.ShowDialog();
+            //ComoJugar comoJugar = new ComoJugar();
+            //comoJugar.ShowDialog();
         }
 
         private void ButtonAcercaDe_Click(object sender, RoutedEventArgs e)
         {
-            AcercaDe acercaDe = new AcercaDe();
-            acercaDe.ShowDialog();
+            //AcercaDe acercaDe = new AcercaDe();
+            //acercaDe.ShowDialog();
         }
 
         private void ButtonSalir_Click(object sender, RoutedEventArgs e)
         {
-            Salir salir = new Salir();
-            salir.ShowDialog();
+            //Salir salir = new Salir();
+            //salir.ShowDialog();
         }
 
         private void ButtonPuntaje_Click(object sender, RoutedEventArgs e)
         {
-            Puntaje puntaje = new Puntaje();
-            puntaje.Show();
+            //Puntaje puntaje = new Puntaje();
+            //puntaje.Show();
 
-            this.Close();
+            //this.Close();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ChatClient.ServiceChat;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace ChatClient
@@ -7,7 +8,7 @@ namespace ChatClient
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class SalaChat : Window, IServiceChatCallback
+    public partial class SalaChat : Page, IServiceChatCallback
     {
         bool isConnected = false;
         ServiceChatClient client;

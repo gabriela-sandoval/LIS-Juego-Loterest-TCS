@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace LIS_Juego_Loterest
 {
     /// <summary>
-    /// Lógica de interacción para Salir.xaml
+    /// Lógica de interacción para ComoJugar.xaml
     /// </summary>
-    public partial class Salir : Window
+    public partial class ComoJugar : Page
     {
-        public Salir()
+        public ComoJugar()
         {
             InitializeComponent();
         }
