@@ -264,21 +264,9 @@
     <Resource Include="Resources\dado6.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ChatClient\ChatClient.csproj">
-      <Project>{ca97b380-e941-45fa-82ea-dff4f317794a}</Project>
-      <Name>ChatClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ChatHost\ChatHost.csproj">
-      <Project>{fc45b876-7b87-4ac9-ba64-47ba9c69be36}</Project>
-      <Name>ChatHost</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ServerServices\ServerServices.csproj">
       <Project>{aa1c4ddf-8bb2-46e9-b8d2-928f9935af06}</Project>
       <Name>ServerServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\wcf_chat\WcfServices.csproj">
-      <Project>{6cefeb18-3b2f-4270-8151-d9cfb0cff816}</Project>
-      <Name>WcfServices</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

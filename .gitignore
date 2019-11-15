@@ -361,3 +361,5 @@ DataModel/app.config
 ServerServices/App.config
 
 wcf_chat/app.config
+
+.scannerwork/
