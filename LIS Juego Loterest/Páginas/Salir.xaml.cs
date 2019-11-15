@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest
+namespace LIS_Juego_Loterest.Páginas
 {
     /// <summary>
     /// Lógica de interacción para Salir.xaml
     /// </summary>
-    public partial class Salir : Page
+    public partial class Salir : IPageListener
     {
+        private IPageManager _pageManager;
+        
         public Salir()
         {
             InitializeComponent();
+        }
+
+        public void SetPageManager(IPageManager pageManager)
+        {
+            _pageManager = pageManager;
         }
     }
 }

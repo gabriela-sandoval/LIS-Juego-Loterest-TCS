@@ -1,24 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest
+namespace LIS_Juego_Loterest.Páginas
 {
     /// <summary>
     /// Lógica de interacción para Menú.xaml
     /// </summary>
-    public partial class Menú : Page
+    public partial class Menú : IPageListener
     {
+        private IPageManager _pageManager;
+        
         public Menú()
         {
             InitializeComponent();
@@ -26,50 +17,42 @@ namespace LIS_Juego_Loterest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //Tablero tablero = new Tablero();
-            //tablero.Show();
-
-            //this.Close();
+            _pageManager.CambiarPantalla<Tablero>();;
         }
 
         private void ButtonAlAzar_Click(object sender, RoutedEventArgs e)
         {
-            //Carta carta = new Carta();
-            //carta.Show();
-
-            //this.Close();
+            _pageManager.CambiarPantalla<Carta>();
         }
 
         private void ButtonIdioma_Click(object sender, RoutedEventArgs e)
         {
-            //Idioma idioma = new Idioma();
-            //idioma.ShowDialog();
+            _pageManager.CambiarPantalla<Idioma>();
         }
 
         private void ButtonComoJugar_Click(object sender, RoutedEventArgs e)
         {
-            //ComoJugar comoJugar = new ComoJugar();
-            //comoJugar.ShowDialog();
+            _pageManager.CambiarPantalla<ComoJugar>();
         }
 
         private void ButtonAcercaDe_Click(object sender, RoutedEventArgs e)
         {
-            //AcercaDe acercaDe = new AcercaDe();
-            //acercaDe.ShowDialog();
+            _pageManager.CambiarPantalla<AcercaDe>();
         }
 
         private void ButtonSalir_Click(object sender, RoutedEventArgs e)
         {
-            //Salir salir = new Salir();
-            //salir.ShowDialog();
+            _pageManager.CambiarPantalla<Salir>();
         }
 
         private void ButtonPuntaje_Click(object sender, RoutedEventArgs e)
         {
-            //Puntaje puntaje = new Puntaje();
-            //puntaje.Show();
+            _pageManager.CambiarPantalla<Puntaje>();
+        }
 
-            //this.Close();
+        public void SetPageManager(IPageManager pageManager)
+        {
+            _pageManager = pageManager;
         }
     }
 }

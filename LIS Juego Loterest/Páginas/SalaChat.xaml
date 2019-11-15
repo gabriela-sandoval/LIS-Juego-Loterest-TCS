@@ -1,20 +1,19 @@
-﻿<Page x:Name="Sala" x:Class="ChatClient.SalaChat"
+﻿<Page x:Name="Sala" x:Class="LIS_Juego_Loterest.Páginas.SalaChat"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ChatClient"
         mc:Ignorable="d"
         Title="LOTEREST" Height="656" Width="1290" Loaded="Window_Loaded" HorizontalAlignment="Center" VerticalAlignment="Center">
     <Page.Background>
-        <ImageBrush ImageSource="Recursos/fondoPrincipal.png"/>
+        <ImageBrush ImageSource="../Resources/fondoPrincipal.png"/>
     </Page.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="388*"/>
             <ColumnDefinition Width="131*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="629" VerticalAlignment="Top" Width="290" Source="Recursos/fondoChat.png"/>
+        <Image HorizontalAlignment="Left" Height="629" VerticalAlignment="Top" Width="290" Source="../Resources/fondoChat.png"/>
 
         <TextBox x:Name="textBoxUserName" HorizontalAlignment="Left" Height="51" Margin="22,205,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="250" FontFamily="Calibri Light" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
         <Button x:Name="buttonConectadoDesconectado" Click="Button_Click" Content="Chatear" HorizontalAlignment="Left" Margin="18,267,0,0" VerticalAlignment="Top" Width="254" Height="29" BorderBrush="{x:Null}" FontFamily="Calibri Light" FontWeight="Bold" FontSize="20" Background="#FF04547C" Foreground="White"/>
@@ -27,10 +26,10 @@
         <ListBox x:Name="listBoxChat" HorizontalAlignment="Left" Height="262" Margin="28,311,0,0" VerticalAlignment="Top" Width="234" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
         <Button x:Name="buttonEnviar" Content="" HorizontalAlignment="Left" Margin="239,590,0,0" VerticalAlignment="Top" Width="33" Height="28" BorderBrush="{x:Null}" Click="ButtonEnviar_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Recursos/botonEnviar.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="../Resources/botonEnviar.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Image x:Name="imageUsuario" HorizontalAlignment="Left" Height="166" Margin="48,35,0,0" VerticalAlignment="Top" Width="219" Source="Recursos/imagenUsuarioCamaleon.png" FlowDirection="RightToLeft" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="imageUsuario" HorizontalAlignment="Left" Height="166" Margin="48,35,0,0" VerticalAlignment="Top" Width="219" Source="../Resources/imagenUsuarioCamaleon.png" FlowDirection="RightToLeft" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="-1"/>

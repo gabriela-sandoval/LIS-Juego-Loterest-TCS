@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest
+namespace LIS_Juego_Loterest.Páginas
 {
     /// <summary>
     /// Lógica de interacción para AcercaDe.xaml
     /// </summary>
-    public partial class AcercaDe : Page
+    public partial class AcercaDe : IPageListener
     {
+        private IPageManager _pageManager;
+        
         public AcercaDe()
         {
             InitializeComponent();
+        }
+
+        public void SetPageManager(IPageManager pageManager)
+        {
+            _pageManager = pageManager;
         }
     }
 }

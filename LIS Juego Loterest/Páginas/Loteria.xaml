@@ -7,23 +7,23 @@
         mc:Ignorable="d"
         Title="Loteria" Height="654" Width="1290" >
     <Page.Background>
-        <ImageBrush ImageSource="Recursos/fondoPrincipal.png"/>
+        <ImageBrush ImageSource="../Resources/fondoPrincipal.png"/>
     </Page.Background>
     <Grid>
-        <Image HorizontalAlignment="Left" Height="100" Margin="1173,466,0,0" VerticalAlignment="Top" Width="100" Source="Recursos/logoLoterest.png"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="1173,466,0,0" VerticalAlignment="Top" Width="100" Source="../Resources/logoLoterest.png"/>
         <Button x:Name="buttonRegresar" Content="" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="70" Height="70" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.028,0.087" Click="ButtonRegresar_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Recursos/regresar.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="../Resources/regresar.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="263" Margin="171,85,0,0" VerticalAlignment="Top" Width="175" Source="Recursos/04 - MOCHILA.png"/>
-        <Image HorizontalAlignment="Left" Height="597" Margin="499,18,0,0" VerticalAlignment="Top" Width="424" Source="Recursos/tablero.png"/>
-        <Image HorizontalAlignment="Left" Height="150" Margin="40,438,0,0" VerticalAlignment="Top" Width="100" Source="Recursos/03 - PROFESOR.png"/>
-        <Image HorizontalAlignment="Left" Height="150" Margin="171,438,0,0" VerticalAlignment="Top" Width="100" Source="Recursos/02 - LAPTOP.png"/>
-        <Image HorizontalAlignment="Left" Height="150" Margin="300,438,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.095,0.309" Source="Recursos/01 - ESTUDIANTES.png"/>
+        <Image HorizontalAlignment="Left" Height="263" Margin="171,85,0,0" VerticalAlignment="Top" Width="175" Source="../Resources/04 - MOCHILA.png"/>
+        <Image HorizontalAlignment="Left" Height="597" Margin="499,18,0,0" VerticalAlignment="Top" Width="424" Source="../Resources/tablero.png"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="40,438,0,0" VerticalAlignment="Top" Width="100" Source="../Resources/03 - PROFESOR.png"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="171,438,0,0" VerticalAlignment="Top" Width="100" Source="../Resources/02 - LAPTOP.png"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="300,438,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.095,0.309" Source="../Resources/01 - ESTUDIANTES.png"/>
         <Button x:Name="buttonLoteria" Content="" HorizontalAlignment="Left" Margin="970,162,0,0" VerticalAlignment="Top" Width="258" Height="125" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonLoteria_Click">
             <Button.Background>
-                <ImageBrush Stretch="Uniform" ImageSource="Recursos/BotonLoteria.png"/>
+                <ImageBrush Stretch="Uniform" ImageSource="../Resources/BotonLoteria.png"/>
             </Button.Background>
         </Button>
         <Label Content="Carta saliente:" HorizontalAlignment="Left" Margin="171,45,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Calibri Light" FontSize="24"/>

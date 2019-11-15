@@ -11,14 +11,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LIS_Juego_Loterest.Interface;
+using LIS_Juego_Loterest.Páginas;
 
 namespace LIS_Juego_Loterest
 {
     /// <summary>
     /// Lógica de interacción para Loteria.xaml
     /// </summary>
-    public partial class Loteria : Page
+    public partial class Loteria : IPageListener
     {
+        private IPageManager _pageManager;
+        
         public Loteria()
         {
             InitializeComponent();
@@ -26,14 +30,17 @@ namespace LIS_Juego_Loterest
 
         private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
         {
-            //Menú menu = new Menú();
-            //menu.ShowDialog();
+            _pageManager.CambiarPantalla<Menú>();
         }
 
         private void ButtonLoteria_Click(object sender, RoutedEventArgs e)
         {
-            //Ganaste ganaste = new Ganaste();
-            //ganaste.Show();
+            _pageManager.CambiarPantalla<Ganaste>();
+        }
+
+        public void SetPageManager(IPageManager pageManager)
+        {
+            _pageManager = pageManager;
         }
     }
 }

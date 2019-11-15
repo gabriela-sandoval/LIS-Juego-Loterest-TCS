@@ -1,24 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest
+namespace LIS_Juego_Loterest.Páginas
 {
     /// <summary>
     /// Lógica de interacción para Ganaste.xaml
     /// </summary>
-    public partial class Ganaste : Page
+    public partial class Ganaste : IPageListener
     {
+        private IPageManager _pageManager;
+        
         public Ganaste()
         {
             InitializeComponent();
@@ -26,8 +17,12 @@ namespace LIS_Juego_Loterest
 
         private void ButtonAceptar_Click(object sender, RoutedEventArgs e)
         {
-            //Menú menu = new Menú();
-            //menu.Show();
+            _pageManager.CambiarPantalla<Menú>();
+        }
+
+        public void SetPageManager(IPageManager pageManager)
+        {
+            _pageManager = pageManager;
         }
     }
 }

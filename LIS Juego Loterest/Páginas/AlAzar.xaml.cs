@@ -4,20 +4,20 @@ using LIS_Juego_Loterest.Interface;
 namespace LIS_Juego_Loterest.Páginas
 {
     /// <summary>
-    /// Lógica de interacción para Carta.xaml
+    /// Lógica de interacción para Al_azar.xaml
     /// </summary>
-    public partial class Carta : IPageListener
+    public partial class AlAzar : IPageListener
     {
         private IPageManager _pageManager;
         
-        public Carta()
+        public AlAzar()
         {
             InitializeComponent();
         }
 
-        private void ButtonSeleccionarTablero_Click(object sender, RoutedEventArgs e)
+        private void ButtonLoteria_Click(object sender, RoutedEventArgs e)
         {
-            _pageManager.CambiarPantalla<AlAzar>();
+            _pageManager.CambiarPantalla<Perdiste>();
         }
 
         public void SetPageManager(IPageManager pageManager)

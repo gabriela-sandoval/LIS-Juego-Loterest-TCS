@@ -1,15 +1,17 @@
-﻿using ChatClient.ServiceChat;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using System.Windows.Input;
+using ChatClient.ServiceChat;
+using LIS_Juego_Loterest.Interface;
 
-namespace ChatClient
+namespace LIS_Juego_Loterest.Páginas
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class SalaChat : Page, IServiceChatCallback
+    public partial class SalaChat : IPageListener, IServiceChatCallback
     {
+        private IPageManager _pageManager;
+        
         bool isConnected = false;
         ServiceChatClient client;
         int ID;
@@ -123,6 +125,11 @@ namespace ChatClient
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        public void SetPageManager(IPageManager pageManager)
+        {
+            _pageManager = pageManager;
         }
     }
 }
