@@ -1,6 +1,7 @@
-﻿using System;
+﻿
 using System.Windows;
 using System.Windows.Controls;
+using LIS_Juego_Loterest.Interface;
 using LIS_Juego_Loterest.Páginas;
 
 namespace LIS_Juego_Loterest
@@ -8,13 +9,12 @@ namespace LIS_Juego_Loterest
     /// <summary>
     /// Lógica de interaOnSizeChangedterest.xaml
     /// </summary>
-    public partial class Loterest : Loterest.IPageManager
+    public partial class Loterest : IPageManager
     {
         public Loterest()
         {
             InitializeComponent();
-            var inicioSesión = new InicioSesión(this);
-            ChangePage(inicioSesión);
+            CambiarPantalla<InicioSesión>();
         }
 
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
@@ -36,28 +36,14 @@ namespace LIS_Juego_Loterest
                 page.Height = Height;
             }
         }
-        
-        public void ChangePage(Window window)
+
+        public T CambiarPantalla<T>() where T : Page, IPageListener, new()
         {
-            Content = window.Content;
-            ChangePageSize();
-        }
-        
-        public void ChangePage(Page page)
-        {
+            var page = new T();
+            page.SetPageManager(this);
             Content = page;
             ChangePageSize();
-        }
-        
-        public interface IPageManager
-        {
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="page"></param>
-            [Obsolete("Método de prueba.")]
-            void ChangePage(Window page);
-            void ChangePage(Page page);
+            return page;
         }
     }
 }
