@@ -35,27 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
-  <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -264,21 +243,9 @@
     <Resource Include="Resources\dado6.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ChatClient\ChatClient.csproj">
-      <Project>{ca97b380-e941-45fa-82ea-dff4f317794a}</Project>
-      <Name>ChatClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ChatHost\ChatHost.csproj">
-      <Project>{fc45b876-7b87-4ac9-ba64-47ba9c69be36}</Project>
-      <Name>ChatHost</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ServerServices\ServerServices.csproj">
       <Project>{aa1c4ddf-8bb2-46e9-b8d2-928f9935af06}</Project>
       <Name>ServerServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\wcf_chat\WcfServices.csproj">
-      <Project>{6cefeb18-3b2f-4270-8151-d9cfb0cff816}</Project>
-      <Name>WcfServices</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -357,6 +324,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
