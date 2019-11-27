@@ -363,3 +363,5 @@ ServerServices/App.config
 wcf_chat/app.config
 
 .scannerwork/
+
+DataAccess/App.config
