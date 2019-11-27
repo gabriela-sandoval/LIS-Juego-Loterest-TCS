@@ -365,3 +365,5 @@ wcf_chat/app.config
 .scannerwork/
 
 .sonarqube/
+
+DataAccess/App.config

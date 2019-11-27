@@ -1,20 +1,17 @@
 using System;
-using System.Linq;
 using System.ServiceModel;
-using DataModel;
+using DataAccess.DAO;
 
 namespace ServerServices
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public partial class ServiceHost
     {
-        private DatabaseContext _database;
-        
         public ServiceHost()
         {
-            _database = new DatabaseContext();
-            var jugadores = _database.Jugador.ToArray();
-            Console.WriteLine($"Hay {jugadores.Length} en la base de datos.");
+            var jugadorDAO = new JugadorDAO();
+            var jugadores = jugadorDAO.GetTotalJugadores();
+            Console.WriteLine($"Hay {jugadores} en la base de datos.");
         }
     }
 }
