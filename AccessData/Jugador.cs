@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServices
+namespace AccessData
 {
     using System;
     using System.Collections.Generic;
     
     public partial class Jugador
     {
-        public string nombreJugador { get; set; }
         public int idJugador { get; set; }
+        public string nombreJugador { get; set; }
         public string correoElectronicoJugador { get; set; }
         public string contraseñaJugador { get; set; }
         public Nullable<int> confirmacionJugador { get; set; }

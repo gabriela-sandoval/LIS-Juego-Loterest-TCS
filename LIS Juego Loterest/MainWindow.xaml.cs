@@ -23,8 +23,8 @@ namespace LIS_Juego_Loterest
 
         private void ButtonIngresarIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            var username = "usuario";
-            var contraseña = "contraseña";
+            Menú menu = new Menú();
+            menu.Show();
         }
     }
 }

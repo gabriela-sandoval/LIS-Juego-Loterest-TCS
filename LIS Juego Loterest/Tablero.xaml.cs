@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using AccessData;
 
 namespace LIS_Juego_Loterest
 {
@@ -23,6 +24,7 @@ namespace LIS_Juego_Loterest
         public Tablero()
         {
             InitializeComponent();
+            Refresh();
         }
 
         private void ButtonSeleccionarTablero_Click(object sender, RoutedEventArgs e)
@@ -37,6 +39,21 @@ namespace LIS_Juego_Loterest
             menu.Show();
         }
 
+        public void Refresh()
+        {
+            List<AccessData.ViewModel.CartaViewModel> listaCartas = new List<AccessData.ViewModel.CartaViewModel>();
+            using (JuegoLoterestEntities baseDeDatos = new JuegoLoterestEntities())
+            {
+                listaCartas = (from d in baseDeDatos.Carta
+                               select new AccessData.ViewModel.CartaViewModel
+                               {
+                                   IdCarta = d.idCarta,
+                                   NombreCarta = d.nombreCarta,
+                                   ImagenCarta = d.imagenCarta
+                               }).ToList();
+            }
+            DataGridTablero.ItemsSource = listaCartas;
+        }
         
     }
 }

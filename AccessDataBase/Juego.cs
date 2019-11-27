@@ -7,15 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServices
+namespace AccessDataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Carta
+    public partial class Juego
     {
-        public int idCarta { get; set; }
-        public string nombreCarta { get; set; }
-        public string rutaImagenCarta { get; set; }
+        public int idJuego { get; set; }
+        public string nombreJuego { get; set; }
+        public string informacionDeJuego { get; set; }
+        public System.TimeSpan tiempoJuego { get; set; }
     }
 }

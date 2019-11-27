@@ -66,5 +66,10 @@ namespace LIS_Juego_Loterest.Páginas
         {
             
         }
+
+        private void LoginControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,17 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServices
+namespace AccessDataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Logro
+    public partial class Carta
     {
-        public int idLogro { get; set; }
-        public string nombreLogro { get; set; }
-        public string descripcionLogro { get; set; }
-        public string rutaImagenLogro { get; set; }
-        public int desbloqueoLogro { get; set; }
+        public int idCarta { get; set; }
+        public string nombreCarta { get; set; }
+        public byte[] imagenCarta { get; set; }
     }
 }

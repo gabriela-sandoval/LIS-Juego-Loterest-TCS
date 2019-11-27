@@ -1,4 +1,4 @@
-﻿namespace LIS_Juego_Loterest
+﻿namespace LISJuegoLoterest
 {
     /// <summary>
     /// Lógica de interacción para App.xaml

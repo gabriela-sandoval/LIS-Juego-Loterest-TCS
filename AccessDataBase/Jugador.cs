@@ -7,14 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServices
+namespace AccessDataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Tablero
+    public partial class Jugador
     {
-        public int idTablero { get; set; }
-        public int casillaTablero { get; set; }
+        public int idJugador { get; set; }
+        public string nombreJugador { get; set; }
+        public string correoElectronicoJugador { get; set; }
+        public string contraseñaJugador { get; set; }
+        public Nullable<int> confirmacionJugador { get; set; }
+        public string codigoJugador { get; set; }
     }
 }

@@ -7,14 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServices
+namespace AccessData
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Puntaje
+    public partial class Logro
     {
-        public int idPuntaje { get; set; }
-        public string totalPuntaje { get; set; }
+        public int idLogro { get; set; }
+        public string nombreLogro { get; set; }
+        public string descripcionLogro { get; set; }
+        public string rutaImagenLogro { get; set; }
+        public int desbloqueoLogro { get; set; }
     }
 }

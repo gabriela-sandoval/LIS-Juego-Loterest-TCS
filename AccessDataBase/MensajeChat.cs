@@ -7,13 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServices
+namespace AccessDataBase
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Sala
+    public partial class MensajeChat
     {
-        public int idSala { get; set; }
+        public int idMensajeChat { get; set; }
+        public System.TimeSpan horaMensajeChat { get; set; }
     }
 }
