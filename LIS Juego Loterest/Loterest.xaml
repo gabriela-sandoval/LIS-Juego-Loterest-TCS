@@ -8,7 +8,8 @@
         Width="1024" Height="768" 
         MinHeight="768" MinWidth="1024" 
         WindowStartupLocation="CenterScreen" 
-        SizeChanged="OnSizeChanged">
+        SizeChanged="OnSizeChanged"
+        Icon="Resources/logoLoterest.png">
     <Grid>
         
     </Grid>

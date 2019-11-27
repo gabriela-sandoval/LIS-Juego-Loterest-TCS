@@ -14,21 +14,6 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,7 +24,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,110 +34,81 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AcercaDe.xaml.cs">
+    <Compile Include="Interface\IPageListener.cs" />
+    <Compile Include="Interface\IPageManager.cs" />
+    <Compile Include="Páginas\AcercaDe.xaml.cs">
       <DependentUpon>AcercaDe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Al azar.xaml.cs">
-      <DependentUpon>Al azar.xaml</DependentUpon>
+    <Compile Include="Páginas\AlAzar.xaml.cs">
+      <DependentUpon>AlAzar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Carta.xaml.cs">
+    <Compile Include="Páginas\Carta.xaml.cs">
       <DependentUpon>Carta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ComoJugar.xaml.cs">
+    <Compile Include="Páginas\ComoJugar.xaml.cs">
       <DependentUpon>ComoJugar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConexionBaseDeDatos.cs" />
     <Compile Include="Controles\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ganaste.xaml.cs">
+    <Compile Include="Páginas\Ganaste.xaml.cs">
       <DependentUpon>Ganaste.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Idioma.xaml.cs">
+    <Compile Include="Páginas\Idioma.xaml.cs">
       <DependentUpon>Idioma.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Logros.xaml.cs">
+    <Compile Include="Páginas\Logros.xaml.cs">
       <DependentUpon>Logros.xaml</DependentUpon>
     </Compile>
     <Compile Include="Loterest.xaml.cs">
       <DependentUpon>Loterest.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Loteria.xaml.cs">
+    <Compile Include="Páginas\Loteria.xaml.cs">
       <DependentUpon>Loteria.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Menú.xaml.cs">
+    <Compile Include="Páginas\Menú.xaml.cs">
       <DependentUpon>Menú.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Perdiste.xaml.cs">
+    <Compile Include="Páginas\Perdiste.xaml.cs">
       <DependentUpon>Perdiste.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Puntaje.xaml.cs">
+    <Compile Include="Páginas\Puntaje.xaml.cs">
       <DependentUpon>Puntaje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SalaChat.xaml.cs">
+    <Compile Include="Páginas\SalaChat.xaml.cs">
       <DependentUpon>SalaChat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Salir.xaml.cs">
+    <Compile Include="Páginas\Salir.xaml.cs">
       <DependentUpon>Salir.xaml</DependentUpon>
     </Compile>
     <Compile Include="Páginas\InicioSesión.xaml.cs">
       <DependentUpon>InicioSesión.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tablero.xaml.cs">
+    <Compile Include="Páginas\Tablero.xaml.cs">
       <DependentUpon>Tablero.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util\ClientFactory.cs" />
-    <Compile Include="Verificación.xaml.cs">
+    <Compile Include="Páginas\Verificación.xaml.cs">
       <DependentUpon>Verificación.xaml</DependentUpon>
     </Compile>
-    <Page Include="AcercaDe.xaml">
+    <Page Include="Páginas\AcercaDe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Al azar.xaml">
+    <Page Include="Páginas\AlAzar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Carta.xaml">
+    <Page Include="Páginas\Carta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ComoJugar.xaml">
+    <Page Include="Páginas\ComoJugar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,15 +116,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Ganaste.xaml">
+    <Page Include="Páginas\Ganaste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Idioma.xaml">
+    <Page Include="Páginas\Idioma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Logros.xaml">
+    <Page Include="Páginas\Logros.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,39 +132,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Loteria.xaml">
+    <Page Include="Páginas\Loteria.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Menú.xaml">
+    <Page Include="Páginas\Menú.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Perdiste.xaml">
+    <Page Include="Páginas\Perdiste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Puntaje.xaml">
+    <Page Include="Páginas\Puntaje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SalaChat.xaml">
+    <Page Include="Páginas\SalaChat.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Salir.xaml">
+    <Page Include="Páginas\Salir.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,11 +164,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tablero.xaml">
+    <Page Include="Páginas\Tablero.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Verificación.xaml">
+    <Page Include="Páginas\Verificación.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,79 +192,58 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\regresar.png" />
-    <Resource Include="Recursos\cartasFondo.png" />
-    <Resource Include="Recursos\cartaAlAzar.png" />
-    <Resource Include="Recursos\botonEnviar.png" />
-    <Resource Include="Recursos\fondoChat.png" />
-    <Resource Include="Recursos\fondoPrincipal.png" />
-    <Resource Include="Recursos\internacionalizacion.png" />
-    <Resource Include="Recursos\logoLoterest.png" />
-    <Resource Include="Recursos\cartaLoteria.png" />
-    <Resource Include="Recursos\tablero.png" />
-    <Resource Include="Recursos\usuario.png" />
+    <Resource Include="Resources\regresar.png" />
+    <Resource Include="Resources\cartasFondo.png" />
+    <Resource Include="Resources\cartaAlAzar.png" />
+    <Resource Include="Resources\botonEnviar.png" />
+    <Resource Include="Resources\fondoChat.png" />
+    <Resource Include="Resources\fondoPrincipal.png" />
+    <Resource Include="Resources\internacionalizacion.png" />
+    <Resource Include="Resources\logoLoterest.png" />
+    <Resource Include="Resources\cartaLoteria.png" />
+    <Resource Include="Resources\tablero.png" />
+    <Resource Include="Resources\usuario.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\CartasfondoInvertido.png" />
+    <Resource Include="Resources\CartasfondoInvertido.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\siguiente.png" />
+    <Resource Include="Resources\siguiente.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\tableroVacio.png" />
+    <Resource Include="Resources\tableroVacio.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\01 - ESTUDIANTES.png" />
-    <Resource Include="Recursos\02 - LAPTOP.png" />
-    <Resource Include="Recursos\03 - PROFESOR.png" />
-    <Resource Include="Recursos\04 - MOCHILA.png" />
+    <Resource Include="Resources\01 - ESTUDIANTES.png" />
+    <Resource Include="Resources\02 - LAPTOP.png" />
+    <Resource Include="Resources\03 - PROFESOR.png" />
+    <Resource Include="Resources\04 - MOCHILA.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\finDeJuego.png" />
+    <Resource Include="Resources\finDeJuego.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\ganaste.png" />
+    <Resource Include="Resources\ganaste.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\botonLoteria.png" />
+    <Resource Include="Resources\botonLoteria.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\atras.png" />
+    <Resource Include="Resources\atras.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\dado6.png" />
+    <Resource Include="Resources\dado6.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AccessData\AccessData.csproj">
-      <Project>{feeff2e4-eb42-47b1-a0bd-8e21e1d3e899}</Project>
-      <Name>AccessData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ChatClient\ChatClient.csproj">
-      <Project>{ca97b380-e941-45fa-82ea-dff4f317794a}</Project>
-      <Name>ChatClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ChatHost\ChatHost.csproj">
-      <Project>{fc45b876-7b87-4ac9-ba64-47ba9c69be36}</Project>
-      <Name>ChatHost</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ServerServices\ServerServices.csproj">
       <Project>{aa1c4ddf-8bb2-46e9-b8d2-928f9935af06}</Project>
       <Name>ServerServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Server\Server.csproj">
-      <Project>{5b43bd98-3f39-4314-bc27-ef6f12dbd34b}</Project>
-      <Name>Server</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\wcf_chat\WcfServices.csproj">
-      <Project>{6cefeb18-3b2f-4270-8151-d9cfb0cff816}</Project>
-      <Name>WcfServices</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -380,34 +306,30 @@
     <Resource Include="Cartas\54 Horario.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\imagenUsuarioCamaleon.png" />
+    <Resource Include="Resources\imagenUsuarioCamaleon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\imagenUsuarioCerdito.png" />
+    <Resource Include="Resources\imagenUsuarioCerdito.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\imagenUsuarioRana.png" />
+    <Resource Include="Resources\imagenUsuarioRana.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\imagenUsuarioRata.png" />
+    <Resource Include="Resources\imagenUsuarioRata.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\desarrollador.png" />
+    <Resource Include="Resources\desarrollador.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recursos\salir.png" />
+    <Resource Include="Resources\salir.png" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
