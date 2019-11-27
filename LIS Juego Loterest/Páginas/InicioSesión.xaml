@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:controles="clr-namespace:LIS_Juego_Loterest.Controles"
       mc:Ignorable="d"
-      Title="InicioSesión" Height="806" Width="1560" MinWidth="1024" MinHeight="768">
+      Title="LOTEREST" Height="658" Width="1290" MinWidth="1290" MinHeight="658" WindowTitle="LOTEREST" HorizontalAlignment="Center" VerticalAlignment="Center" WindowHeight="0" ShowsNavigationUI="False">
 
     <Grid >
         <Grid.Background>
@@ -54,6 +54,7 @@
         <Button x:Name="buttonSiguienteIniciarSesion" Content="SIGUIENTE" HorizontalAlignment="Left" Margin="718,554,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="18" FontWeight="ExtraBold" Padding="5,1" />
 
 
-        <controles:Login x:Name="LoginControl" Margin="0,10,10,0" HorizontalAlignment="Right" Width="700" Height="115" VerticalAlignment="Top" LoginButtonClicked="OnLoginButtonClick"/>
+        <controles:Login x:Name="LoginControl" Margin="0,10,10,0" HorizontalAlignment="Right" Width="700" Height="115" VerticalAlignment="Top" LoginButtonClicked="OnLoginButtonClick" Loaded="LoginControl_Loaded"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="492" Margin="94,61,0,0" Stroke="Black" VerticalAlignment="Top" Width="412"/>
     </Grid>
 </Page>
