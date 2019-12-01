@@ -51,7 +51,6 @@
     <Compile Include="DAO\Interface\IJugadorDAO.cs" />
     <Compile Include="DAO\JugadorDAO.cs" />
     <Compile Include="Exception\DAOException.cs" />
-    <Compile Include="Exception\JugadorDAOExceptionCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

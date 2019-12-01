@@ -9,6 +9,15 @@ namespace DataAccess.DAO
 {
     public class JugadorDAO : IJugadorDAO
     {
+        public void AgregarJugador(Jugador jugador)
+        {
+            using (var db = new DatabaseContext())
+            {
+                db.Jugador.Add(jugador);
+                db.SaveChanges();
+            }
+        }
+
         public Jugador GetJugadorConCredenciales(string username, string password)
         {
             using (var db = new DatabaseContext())

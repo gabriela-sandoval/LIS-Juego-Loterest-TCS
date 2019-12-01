@@ -39,6 +39,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controles\RegistrarJugador.xaml.cs">
+      <DependentUpon>RegistrarJugador.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Interface\IPageListener.cs" />
     <Compile Include="Interface\IPageManager.cs" />
     <Compile Include="Páginas\AcercaDe.xaml.cs">
@@ -96,6 +99,10 @@
     <Compile Include="Páginas\Verificación.xaml.cs">
       <DependentUpon>Verificación.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controles\RegistrarJugador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Páginas\AcercaDe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -330,6 +337,9 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

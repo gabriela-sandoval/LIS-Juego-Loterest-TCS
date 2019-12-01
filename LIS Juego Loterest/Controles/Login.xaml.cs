@@ -17,7 +17,7 @@ namespace LIS_Juego_Loterest.Controles
         
         private void OnLoginInputTextChanged(object sender, RoutedEventArgs routedEventArgs)
         {
-            var username = EmailTextBox.Text;
+            var username = UsernameTextBox.Text;
             var password = PasswordBox.Password;
             
             // Habilitar el botón "Iniciar sesión" si ambos campos contienen texto.
@@ -26,12 +26,12 @@ namespace LIS_Juego_Loterest.Controles
 
         private void OnLoginButtonClick(object sender, EventArgs eventArgs)
         {
-            // Deshabilitar campos de texto y botón;
-            EmailTextBox.IsEnabled = false;
+            // Deshabilitar campos de texto y botón.
+            UsernameTextBox.IsEnabled = false;
             PasswordBox.IsEnabled = false;
             LoginButton.IsEnabled = false;
             
-            var username = EmailTextBox.Text;
+            var username = UsernameTextBox.Text;
             var password = PasswordBox.Password;
             var loginArgs = new LoginArgs(username, password);
             LoginButtonClicked?.Invoke(this, loginArgs);
@@ -47,6 +47,11 @@ namespace LIS_Juego_Loterest.Controles
                 Username = username;
                 Password = password;
             }
+        }
+
+        private void OnLoginInputTextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
         }
     }
 }

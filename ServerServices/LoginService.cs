@@ -3,6 +3,7 @@ using System.ServiceModel;
 using DataAccess.DAO;
 using DataAccess.DAO.Interface;
 using DataAccess.Exception;
+using DataModel.Model;
 using ServerServices.Interface;
 using ServerServices.Model.Enum;
 using ServerServices.Util;
@@ -36,6 +37,12 @@ namespace ServerServices
 
         public void RegisterRequest(string username, string password, string email)
         {
+            var jugador = new Jugador{
+                Nombre = username,
+                Contraseña = password,
+                CorreoElectrónico = email
+            };
+            _jugadorDAO.AgregarJugador(jugador);
         }
 
         public void VerificationRequest(string username, string code)

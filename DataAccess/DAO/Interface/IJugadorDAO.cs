@@ -14,5 +14,6 @@ namespace DataAccess.DAO.Interface
         /// <returns></returns>
         Jugador GetJugadorConCredenciales(string username, string password);
         int GetTotalJugadores();
+        void AgregarJugador(Jugador jugador);
     }
 }

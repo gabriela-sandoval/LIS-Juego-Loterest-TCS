@@ -13,23 +13,25 @@
             <ColumnDefinition Width="388*"/>
             <ColumnDefinition Width="131*"/>
         </Grid.ColumnDefinitions>
-        <Image HorizontalAlignment="Left" Height="629" VerticalAlignment="Top" Width="290" Source="../Resources/fondoChat.png"/>
 
-        <TextBox x:Name="textBoxUserName" HorizontalAlignment="Left" Height="51" Margin="22,205,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="250" FontFamily="Calibri Light" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <Button x:Name="buttonConectadoDesconectado" Click="Button_Click" Content="Chatear" HorizontalAlignment="Left" Margin="18,267,0,0" VerticalAlignment="Top" Width="254" Height="29" BorderBrush="{x:Null}" FontFamily="Calibri Light" FontWeight="Bold" FontSize="20" Background="#FF04547C" Foreground="White"/>
-        <TextBox x:Name="textBoxMensaje" HorizontalAlignment="Left" Height="27" Margin="18,590,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" FontFamily="Calibri Light" FontSize="16" Foreground="#FF04547C" BorderBrush="{x:Null}" KeyDown="TextBoxMensaje_KeyDown_1"/>
-        <Rectangle HorizontalAlignment="Left" Height="280" Margin="18,301,0,0" VerticalAlignment="Top" Width="254">
+        <Grid Margin="0,0,656.667,0">
+            <Image HorizontalAlignment="Left" Height="697" VerticalAlignment="Top" Width="298" Source="../Resources/fondoChat.png" Margin="0,0,0,-41" Stretch="UniformToFill"/>
+
+        </Grid>
+        <Button x:Name="buttonConectadoDesconectado" Click="Button_Click" Content="Chatear" HorizontalAlignment="Left" Margin="18,267,0,0" VerticalAlignment="Top" Width="267" Height="29" BorderBrush="{x:Null}" FontFamily="Calibri Light" FontWeight="Bold" FontSize="20" Background="#FF04547C" Foreground="White"/>
+        <TextBox x:Name="textBoxMensaje" HorizontalAlignment="Left" Height="28" Margin="18,590,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" FontFamily="Calibri Light" FontSize="16" Foreground="#FF04547C" BorderBrush="{x:Null}" KeyDown="TextBoxMensaje_KeyDown_1"/>
+        <Rectangle HorizontalAlignment="Left" Height="280" Margin="18,301,0,0" VerticalAlignment="Top" Width="267">
             <Rectangle.Fill>
                 <SolidColorBrush Color="White" Opacity="0.7"/>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox x:Name="listBoxChat" HorizontalAlignment="Left" Height="262" Margin="28,311,0,0" VerticalAlignment="Top" Width="234" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
-        <Button x:Name="buttonEnviar" Content="" HorizontalAlignment="Left" Margin="239,590,0,0" VerticalAlignment="Top" Width="33" Height="28" BorderBrush="{x:Null}" Click="ButtonEnviar_Click">
+        <ListBox x:Name="listBoxChat" HorizontalAlignment="Left" Height="262" Margin="28,311,0,0" VerticalAlignment="Top" Width="257" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="14" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <Button x:Name="buttonEnviar" Content="" HorizontalAlignment="Left" Margin="253,590,0,0" VerticalAlignment="Top" Width="33" Height="28" BorderBrush="{x:Null}" Click="ButtonEnviar_Click" RenderTransformOrigin="-4.917,0.554">
             <Button.Background>
                 <ImageBrush ImageSource="../Resources/botonEnviar.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Image x:Name="imageUsuario" HorizontalAlignment="Left" Height="166" Margin="48,35,0,0" VerticalAlignment="Top" Width="219" Source="../Resources/imagenUsuarioCamaleon.png" FlowDirection="RightToLeft" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="imageUsuario" HorizontalAlignment="Left" Height="166" Margin="51,36,0,0" VerticalAlignment="Top" Width="219" Source="../Resources/imagenUsuarioCamaleon.png" FlowDirection="RightToLeft" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="-1"/>
@@ -39,14 +41,16 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Rectangle HorizontalAlignment="Left" Height="420" Margin="346,145,0,0" Stroke="Black" VerticalAlignment="Top" Width="850" Grid.ColumnSpan="2">
+        <Rectangle HorizontalAlignment="Left" Height="316" Margin="361,163,0,0" Stroke="Black" VerticalAlignment="Top" Width="576">
             <Rectangle.Fill>
                 <SolidColorBrush Color="White" Opacity="0.75"/>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox x:Name="listBoxJugadoresDisponibles" HorizontalAlignment="Left" Height="380" Margin="367,167,0,0" VerticalAlignment="Top" Width="810" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="18" SelectionChanged="ListBoxJugadoresDisponibles_SelectionChanged"/>
-        <TextBox x:Name="textBoxUserName_Copy" HorizontalAlignment="Left" Height="73" Margin="346,41,0,0" TextWrapping="Wrap" Text="Jugadores disponibles" VerticalAlignment="Top" Width="447" FontFamily="Calibri Light" FontSize="48" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
-        <Button Content="Jugar" Grid.Column="1" HorizontalAlignment="Left" Margin="69.667,41,0,0" VerticalAlignment="Top" Width="167" Height="73" FontFamily="Calibri Light" FontSize="22" Background="White" Foreground="#FF322D56" BorderBrush="White" Click="Button_Click_1"/>
+        <ListBox x:Name="listBoxJugadoresDisponibles" HorizontalAlignment="Left" Height="284" Margin="379,177,0,0" VerticalAlignment="Top" Width="540" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="18" SelectionChanged="ListBoxJugadoresDisponibles_SelectionChanged"/>
+        <Button x:Name="JugarButton" Content="JUGAR" HorizontalAlignment="Left" Margin="359,520,0,0" VerticalAlignment="Top" Width="576" Height="65" FontFamily="Calibri Light" FontSize="48" Foreground="#FF04C4DC" BorderBrush="#FF04C4DC" Background="White" Click="JugarButton_Click"/>
+        <Label Content="Jugadores disponibles" HorizontalAlignment="Left" Margin="361,79,0,0" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="48" FontWeight="Bold" Foreground="White"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="656" Margin="39.333,34,-47,-34" VerticalAlignment="Top" Width="333" Source="/LIS Juego Loterest;component/Resources/cartasFondo.png"/>
+        <Label x:Name="UsernameLabel" Content="User" HorizontalAlignment="Left" Margin="93,198,0,0" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="48" FontWeight="Bold" Foreground="White" IsEnabled="False"/>
 
     </Grid>
 </Page>

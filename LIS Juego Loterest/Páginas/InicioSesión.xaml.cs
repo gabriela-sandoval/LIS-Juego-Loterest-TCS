@@ -25,6 +25,7 @@ namespace LIS_Juego_Loterest.Páginas
         {
             InitializeComponent();
             _loginService = ClientFactory.CreateDuplexChannel<ILoginService, ILoginServiceCallback>(this);
+            
         }
 
         private void OnLoginButtonClick(object sender, Login.LoginArgs loginArgs)
@@ -50,7 +51,7 @@ namespace LIS_Juego_Loterest.Páginas
         public void OnLoginError(LoginRequestReplyCode replyCode, string message)
         {
             // Rehabilitar campos de texto y botón
-            LoginControl.EmailTextBox.IsEnabled = true;
+            LoginControl.UsernameTextBox.IsEnabled = true;
             LoginControl.PasswordBox.IsEnabled = true;
             LoginControl.LoginButton.IsEnabled = true;
 
@@ -60,11 +61,6 @@ namespace LIS_Juego_Loterest.Páginas
         public void SetPageManager(IPageManager pageManager)
         {
             _pageManager = pageManager;
-        }
-
-        private void LoginControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-
         }
 
         private void LoginControl_Loaded(object sender, System.Windows.RoutedEventArgs e)

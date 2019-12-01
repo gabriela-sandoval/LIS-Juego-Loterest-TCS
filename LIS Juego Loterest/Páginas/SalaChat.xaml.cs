@@ -61,14 +61,14 @@ namespace LIS_Juego_Loterest.Páginas
             ConnectUser();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         public void SetPageManager(IPageManager pageManager)
         {
             _pageManager = pageManager;
+        }
+
+        private void JugarButton_Click(object sender, RoutedEventArgs e)
+        {
+            _pageManager.CambiarPantalla<Menú>();
         }
     }
 }

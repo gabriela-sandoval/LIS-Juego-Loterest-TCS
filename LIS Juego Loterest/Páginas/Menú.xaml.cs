@@ -54,5 +54,10 @@ namespace LIS_Juego_Loterest.Páginas
         {
             _pageManager = pageManager;
         }
+
+        private void ChatButton_Click(object sender, RoutedEventArgs e)
+        {
+            _pageManager.CambiarPantalla<SalaChat>();
+        }
     }
 }
