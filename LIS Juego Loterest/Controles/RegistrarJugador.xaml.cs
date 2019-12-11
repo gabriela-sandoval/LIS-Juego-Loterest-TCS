@@ -29,31 +29,12 @@ namespace LIS_Juego_Loterest.Controles
 
         private void OnRegisterPlayerInputTextChanged(object sender, RoutedEventArgs routedEventArgs)
         {
-            var username = UsernameTextBox.Text;
-            var email = EmailTextBox.Text;
-            var password = PasswordBox.Password;
-            var repeatPassword = RepeatPasswordBox.Password;
-
-            //Habilitar el botón "Siguiente" si los passwords coinciden y los campos contienen texto.
-            SiguienteButton.IsEnabled = !(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) 
-                || string.IsNullOrEmpty(repeatPassword) && string.Equals(password, repeatPassword));
+            
         }
 
         private void RegisterPlayerButtonClick(object sender, EventArgs eventArgs)
         {
-            // Desabilitar campos de texto y botón.
-            UsernameTextBox.IsEnabled = false;
-            EmailTextBox.IsEnabled = false;
-            PasswordBox.IsEnabled = false;
-            RepeatPasswordBox.IsEnabled = false;
-            SiguienteButton.IsEnabled = false;
-
-            var username = UsernameTextBox.Text;
-            var email = EmailTextBox.Text;
-            var password = PasswordBox.Password;
-            var repeatPassword = RepeatPasswordBox;
-            var registerPlayerArgs = new RegisterPlayerArgs(username, email, password);
-            RegisterPlayerButtonClicked?.Invoke(this, registerPlayerArgs);
+            
         }
 
         public class RegisterPlayerArgs : EventArgs
@@ -69,5 +50,12 @@ namespace LIS_Juego_Loterest.Controles
                 Password = password;
             }
         }
+
+        private void SiguienteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

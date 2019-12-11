@@ -95,10 +95,15 @@
     <Compile Include="Páginas\Tablero.xaml.cs">
       <DependentUpon>Tablero.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SessionManager\Session.cs" />
     <Compile Include="Util\ClientFactory.cs" />
     <Compile Include="Páginas\Verificación.xaml.cs">
       <DependentUpon>Verificación.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controles\Carta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controles\RegistrarJugador.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

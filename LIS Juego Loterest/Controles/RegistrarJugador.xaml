@@ -34,7 +34,7 @@
         <Label Content="Correo electrónico:" HorizontalAlignment="Left" Margin="62,143,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Calibri Light" FontSize="16" FontWeight="ExtraBold"/>
         <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="62,211,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Calibri Light" FontSize="16" FontWeight="ExtraBold"/>
         <Label Content="Repetir contraseña:" HorizontalAlignment="Left" Margin="63,281,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Calibri Light" FontSize="16" FontWeight="ExtraBold"/>
-        <Button x:Name="SiguienteButton" Content="SIGUIENTE" HorizontalAlignment="Left" Margin="136,379,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="18" FontWeight="ExtraBold" Padding="5,1" />
+        <Button x:Name="SiguienteButton" Content="SIGUIENTE" HorizontalAlignment="Left" Margin="136,379,0,0" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="18" FontWeight="ExtraBold" Padding="5,1" Click="SiguienteButton_Click" />
 
     </Grid>
 </UserControl>

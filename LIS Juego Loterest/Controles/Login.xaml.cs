@@ -17,8 +17,8 @@ namespace LIS_Juego_Loterest.Controles
         
         private void OnLoginInputTextChanged(object sender, RoutedEventArgs routedEventArgs)
         {
-            var username = UsernameTextBox.Text;
-            var password = PasswordBox.Password;
+            var username = UsernameTextBox.Text.Trim();
+            var password = PasswordBox.Password.Trim();
             
             // Habilitar el botón "Iniciar sesión" si ambos campos contienen texto.
             LoginButton.IsEnabled = !(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password));

@@ -12,7 +12,7 @@ namespace DataModel
         
         public DatabaseContext() : base("connectionString")
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<DatabaseContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DatabaseContext>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

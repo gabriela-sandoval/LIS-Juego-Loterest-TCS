@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using LIS_Juego_Loterest.Interface;
 using LIS_Juego_Loterest.Páginas;
 
@@ -41,6 +42,18 @@ namespace LIS_Juego_Loterest
         public void SetPageManager(IPageManager pageManager)
         {
             _pageManager = pageManager;
+        }
+
+        private void Loteria1_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private int increment = 0;
+        private void DispatcherTimerTickSeconds(object sender, EventArgs e)
+        {
+            increment++;
+            TiempoLabel.Content = increment.ToString();
         }
     }
 }

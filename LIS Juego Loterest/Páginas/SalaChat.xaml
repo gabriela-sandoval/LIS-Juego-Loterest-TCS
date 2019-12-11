@@ -14,8 +14,8 @@
             <ColumnDefinition Width="131*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Margin="0,0,656.667,0">
-            <Image HorizontalAlignment="Left" Height="697" VerticalAlignment="Top" Width="298" Source="../Resources/fondoChat.png" Margin="0,0,0,-41" Stretch="UniformToFill"/>
+        <Grid Margin="0,0,656.667,0" Height="656" VerticalAlignment="Top">
+            <Image HorizontalAlignment="Left" Height="646" VerticalAlignment="Top" Width="298" Source="../Resources/fondoChat.png" Stretch="UniformToFill"/>
 
         </Grid>
         <Button x:Name="buttonConectadoDesconectado" Click="Button_Click" Content="Chatear" HorizontalAlignment="Left" Margin="18,267,0,0" VerticalAlignment="Top" Width="267" Height="29" BorderBrush="{x:Null}" FontFamily="Calibri Light" FontWeight="Bold" FontSize="20" Background="#FF04547C" Foreground="White"/>

@@ -18,6 +18,7 @@ namespace LIS_Juego_Loterest.Páginas
         ///     Interfaz del servicio de Login que se conecta al servidor.
         /// </summary>
         private readonly ILoginService _loginService;
+        private readonly ILoginService _registerPlayerService;
 
         private IPageManager _pageManager;
         
@@ -25,7 +26,7 @@ namespace LIS_Juego_Loterest.Páginas
         {
             InitializeComponent();
             _loginService = ClientFactory.CreateDuplexChannel<ILoginService, ILoginServiceCallback>(this);
-            
+            _registerPlayerService = ClientFactory.CreateDuplexChannel<ILoginService, ILoginServiceCallback>(this);
         }
 
         private void OnLoginButtonClick(object sender, Login.LoginArgs loginArgs)
@@ -40,6 +41,32 @@ namespace LIS_Juego_Loterest.Páginas
             {
                 OnLoginError(LoginRequestReplyCode.GeneralError, ex.Message);
             }
+        }
+
+        private void RegisterPlayerButtonClick(object sender, RegistrarJugador.RegisterPlayerArgs registerPlayerArgs)
+        {
+            var username = registerPlayerArgs.Username;
+            var email = registerPlayerArgs.Email;
+            var password = registerPlayerArgs.Password;
+            try
+            {
+                _registerPlayerService.RegisterRequest(username, password, email);
+            }catch (CommunicationException ex)
+            {
+                OnRegisterPlayerError(RegisterRequestReplyCode.GeneralError, ex.Message);
+            }
+
+        }
+
+        private void OnRegisterPlayerError(RegisterRequestReplyCode generalError, string message)
+        {
+            // Rehabilitar campos de texto y botón
+            RegistrarJugadorControl.UsernameTextBox.IsEnabled = true;
+            RegistrarJugadorControl.EmailTextBox.IsEnabled = true;
+            RegistrarJugadorControl.PasswordBox.IsEnabled = true;
+            RegistrarJugadorControl.RepeatPasswordBox.IsEnabled = true;
+
+            MessageBox.Show(message);
         }
 
         public void OnLoginSuccess(string sessionId)
@@ -64,6 +91,11 @@ namespace LIS_Juego_Loterest.Páginas
         }
 
         private void LoginControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void RegistrarJugador_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
