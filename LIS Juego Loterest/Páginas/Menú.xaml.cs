@@ -37,7 +37,7 @@ namespace LIS_Juego_Loterest.Páginas
 
         private void ButtonAcercaDe_Click(object sender, RoutedEventArgs e)
         {
-            _pageManager.CambiarPantalla<AcercaDe>();
+           // _pageManager.CambiarPantalla<AcercaDe>();
         }
 
         private void ButtonSalir_Click(object sender, RoutedEventArgs e)

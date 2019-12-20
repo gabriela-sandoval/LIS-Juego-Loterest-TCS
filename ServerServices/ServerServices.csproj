@@ -12,6 +12,8 @@
     <AssemblyName>ServerServices</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,35 +35,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\IChatService.cs" />
-    <Compile Include="Interface\IChatServiceCallback.cs" />
-    <Compile Include="Interface\ILoginService.cs" />
-    <Compile Include="Interface\ILoginServiceCallback.cs" />
-    <Compile Include="Interface\IRegisterServiceCallback.cs" />
-    <Compile Include="Interface\IVerificationServiceCallback.cs" />
-    <Compile Include="Model\Client.cs" />
-    <Compile Include="Model\Enum\LoginRequestReplyCode.cs" />
-    <Compile Include="Model\Enum\RegisterRequestReplyCode.cs" />
-    <Compile Include="Model\Enum\VerificationRequestReplyCode.cs" />
+    <Compile Include="IGameServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ChatService.cs" />
-    <Compile Include="LoginService.cs" />
-    <Compile Include="ServiceHost.cs" />
-    <Compile Include="Util\OperationContextWrapper.cs" />
+    <Compile Include="GameServices.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{ad97e9d3-702c-4e60-b7c1-f600fd20d651}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataModel\DataModel.csproj">
       <Project>{e984f4c7-9ac6-4381-a61b-02787f73ee42}</Project>
       <Name>DataModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

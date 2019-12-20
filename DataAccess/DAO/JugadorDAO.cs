@@ -7,34 +7,34 @@ using DataModel.Model;
 
 namespace DataAccess.DAO
 {
-    public class JugadorDAO : IJugadorDAO
+    public class JugadorDAO
     {
-        public void AgregarJugador(Jugador jugador)
-        {
-            using (var db = new DatabaseContext())
-            {
-                db.Jugador.Add(jugador);
-                db.SaveChanges();
-            }
-        }
+        //public void AgregarJugador(Jugador jugador)
+        //{
+        //    using (var db = new DatabaseContext())
+        //    {
+        //        db.Jugador.Add(jugador);
+        //        db.SaveChanges();
+        //    }
+        //}
 
-        public Jugador GetJugadorConCredenciales(string username, string password)
-        {
-            using (var db = new DatabaseContext())
-            {
-                var jugador = db.Jugador.FirstOrDefault(j => j.Nombre == username && j.Contraseña == password);
-                if (jugador != null) return jugador;
+        //public Jugador GetJugadorConCredenciales(string username, string password)
+        //{
+        //    using (var db = new DatabaseContext())
+        //    {
+        //        var jugador = db.Jugador.FirstOrDefault(j => j.Nombre == username && j.Contraseña == password);
+        //        if (jugador != null) return jugador;
 
-                throw new DAOException($"El usuario '{username}' no existe en nuestra base de datos");
-            }
-        }
+        //        throw new DAOException($"El usuario '{username}' no existe en nuestra base de datos");
+        //    }
+        //}
 
-        public int GetTotalJugadores()
-        {
-            using (var db = new DatabaseContext())
-            {
-                return db.Jugador.Count();
-            }
-        }
+        //public int GetTotalJugadores()
+        //{
+        //        using (var db = new DatabaseContext())
+        //        {
+        //            return db.Jugador.Count();
+        //        }
+        //}
     }
 }

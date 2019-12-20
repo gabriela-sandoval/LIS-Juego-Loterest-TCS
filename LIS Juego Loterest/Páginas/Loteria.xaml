@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LIS_Juego_Loterest"
-        xmlns:Controles="clr-namespace:LIS_Juego_Loterest.Controles" x:Name="Loteria1" x:Class="LIS_Juego_Loterest.Loteria"
+    x:Name="Loteria1" x:Class="LIS_Juego_Loterest.Loteria"
         mc:Ignorable="d"
         Title="Loteria" Height="654" Width="1290" Loaded="Loteria1_Loaded" >
     <Page.Background>
@@ -17,7 +16,7 @@
                 <ImageBrush ImageSource="../Resources/regresar.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Image x:Name="CartaImage" HorizontalAlignment="Left" Height="263" Margin="171,85,0,0" VerticalAlignment="Top" Width="175" Source="../Resources/04 - MOCHILA.png"/>
+        <Image x:Name="CartaImage" HorizontalAlignment="Left" Height="263" Margin="150,91,0,0" VerticalAlignment="Top" Width="175" Source="../Resources/04 - MOCHILA.png"/>
         <Image HorizontalAlignment="Left" Height="597" Margin="499,18,0,0" VerticalAlignment="Top" Width="424" Source="../Resources/tablero.png"/>
         <Image HorizontalAlignment="Left" Height="150" Margin="40,408,0,0" VerticalAlignment="Top" Width="100" Source="../Resources/03 - PROFESOR.png"/>
         <Image HorizontalAlignment="Left" Height="150" Margin="171,408,0,0" VerticalAlignment="Top" Width="100" Source="../Resources/02 - LAPTOP.png"/>

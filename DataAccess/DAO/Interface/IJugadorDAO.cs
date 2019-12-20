@@ -12,8 +12,8 @@ namespace DataAccess.DAO.Interface
         /// <param name="password"></param>
         /// <exception cref="DAOException"></exception>
         /// <returns></returns>
-        Jugador GetJugadorConCredenciales(string username, string password);
-        int GetTotalJugadores();
-        void AgregarJugador(Jugador jugador);
+        //Jugador GetJugadorConCredenciales(string username, string password);
+        ////int GetTotalJugadores();
+        //void AgregarJugador(Jugador jugador);
     }
 }

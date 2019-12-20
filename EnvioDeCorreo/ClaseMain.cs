@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EnvioDeCorreo
+namespace VerificacionCorreo
 {
-    class ClaseMain
+    public static class ClaseMain
     {
         static void Main(string[] args)
         {

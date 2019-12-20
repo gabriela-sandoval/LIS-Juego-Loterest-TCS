@@ -39,9 +39,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controles\RegistrarJugador.xaml.cs">
-      <DependentUpon>RegistrarJugador.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Interface\IPageListener.cs" />
     <Compile Include="Interface\IPageManager.cs" />
     <Compile Include="Páginas\AcercaDe.xaml.cs">
@@ -56,9 +53,6 @@
     <Compile Include="Páginas\ComoJugar.xaml.cs">
       <DependentUpon>ComoJugar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controles\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Páginas\Ganaste.xaml.cs">
       <DependentUpon>Ganaste.xaml</DependentUpon>
     </Compile>
@@ -67,9 +61,6 @@
     </Compile>
     <Compile Include="Páginas\Logros.xaml.cs">
       <DependentUpon>Logros.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Loterest.xaml.cs">
-      <DependentUpon>Loterest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Páginas\Loteria.xaml.cs">
       <DependentUpon>Loteria.xaml</DependentUpon>
@@ -89,7 +80,7 @@
     <Compile Include="Páginas\Salir.xaml.cs">
       <DependentUpon>Salir.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\InicioSesión.xaml.cs">
+    <Compile Include="InicioSesión.xaml.cs">
       <DependentUpon>InicioSesión.xaml</DependentUpon>
     </Compile>
     <Compile Include="Páginas\Tablero.xaml.cs">
@@ -100,14 +91,6 @@
     <Compile Include="Páginas\Verificación.xaml.cs">
       <DependentUpon>Verificación.xaml</DependentUpon>
     </Compile>
-    <Page Include="Controles\Carta.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controles\RegistrarJugador.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Páginas\AcercaDe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,10 +107,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controles\Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Páginas\Ganaste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,10 +116,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Páginas\Logros.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Loterest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,8 +147,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\InicioSesión.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="InicioSesión.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Páginas\Tablero.xaml">
@@ -253,6 +227,14 @@
     <Resource Include="Resources\dado6.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{e984f4c7-9ac6-4381-a61b-02787f73ee42}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnvioDeCorreo\VerificacionCorreo.csproj">
+      <Project>{9cbf2ffe-f86d-4bf9-8c00-2a38ea70bc3e}</Project>
+      <Name>VerificacionCorreo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServerServices\ServerServices.csproj">
       <Project>{aa1c4ddf-8bb2-46e9-b8d2-928f9935af06}</Project>
       <Name>ServerServices</Name>
@@ -336,15 +318,25 @@
     <Resource Include="Resources\salir.png" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

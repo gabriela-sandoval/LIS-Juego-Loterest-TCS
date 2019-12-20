@@ -34,7 +34,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
-    <Compile Include="Model\Jugador.cs" />
+    <Compile Include="Jugador.cs">
+      <DependentUpon>Loterest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loterest.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Loterest.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loterest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Loterest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loterest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Loterest.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Tabla.cs" />
+    <Compile Include="Model\UsuarioJugador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,13 +81,36 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <EntityDeploy Include="Loterest.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Loterest.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Loterest.edmx.diagram">
+      <DependentUpon>Loterest.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Loterest.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Loterest.edmx</DependentUpon>
+      <LastGenOutput>Loterest.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Loterest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Loterest.edmx</DependentUpon>
+      <LastGenOutput>Loterest.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
