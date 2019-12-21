@@ -1,14 +1,13 @@
 ﻿using System.Windows;
-using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest.Páginas
+/// <summary>
+/// Ventana Carta.
+/// Permite la seleccion de la carta para poder iniciar el modo de juego Al azar.
+/// </summary>
+namespace LIS_Juego_Loterest.Ventanas
 {
-    /// <summary>
-    /// Lógica de interacción para Carta.xaml
-    /// </summary>
-    public partial class Carta : IPageListener
+    public partial class Carta : Window
     {
-        private IPageManager _pageManager;
         
         public Carta()
         {
@@ -17,12 +16,7 @@ namespace LIS_Juego_Loterest.Páginas
 
         private void ButtonSeleccionarTablero_Click(object sender, RoutedEventArgs e)
         {
-            _pageManager.CambiarPantalla<AlAzar>();
-        }
-
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
+            
         }
     }
 }
