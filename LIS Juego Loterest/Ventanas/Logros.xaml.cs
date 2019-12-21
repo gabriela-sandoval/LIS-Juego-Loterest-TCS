@@ -1,22 +1,15 @@
-﻿using LIS_Juego_Loterest.Interface;
+﻿using System.Windows;
 
-namespace LIS_Juego_Loterest.Páginas
+namespace LIS_Juego_Loterest.Ventanas
 {
     /// <summary>
     /// Lógica de interacción para Logros.xaml
     /// </summary>
-    public partial class Logros : IPageListener
-    {
-        private IPageManager _pageManager;
-        
+    public partial class Logros : Window
+    {   
         public Logros()
         {
             InitializeComponent();
-        }
-
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
         }
     }
 }
