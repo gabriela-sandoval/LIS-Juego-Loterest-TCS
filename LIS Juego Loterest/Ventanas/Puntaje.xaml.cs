@@ -1,16 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest.Páginas
+namespace LIS_Juego_Loterest.Ventanas
 {
-    /// <summary>
-    /// Lógica de interacción para Puntaje.xaml
-    /// </summary>
-    public partial class Puntaje : IPageListener
+    public partial class Puntaje : Window
     {
-        private IPageManager _pageManager;
-        
         public Puntaje()
         {
             InitializeComponent();
@@ -23,12 +17,7 @@ namespace LIS_Juego_Loterest.Páginas
 
         private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
         {
-            _pageManager.CambiarPantalla<Menú>();
-        }
 
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
         }
     }
 }
