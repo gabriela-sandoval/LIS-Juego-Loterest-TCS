@@ -1,22 +1,12 @@
-﻿using LIS_Juego_Loterest.Interface;
+﻿using System.Windows;
 
-namespace LIS_Juego_Loterest.Páginas
+namespace LIS_Juego_Loterest.Ventanas
 {
-    /// <summary>
-    /// Lógica de interacción para Perdiste.xaml
-    /// </summary>
-    public partial class Perdiste : IPageListener
-    {
-        private IPageManager _pageManager;
-        
+    public partial class Perdiste : Window
+    {   
         public Perdiste()
         {
             InitializeComponent();
-        }
-
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
         }
     }
 }

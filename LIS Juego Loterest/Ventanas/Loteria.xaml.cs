@@ -1,11 +1,7 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 
-namespace LIS_Juego_Loterest
+namespace LIS_Juego_Loterest.Ventanas
 {
-    /// <summary>
-    /// Lógica de interacción para Loteria.xaml
-    /// </summary>
     public partial class Loteria : Window
     {
         public Loteria()
