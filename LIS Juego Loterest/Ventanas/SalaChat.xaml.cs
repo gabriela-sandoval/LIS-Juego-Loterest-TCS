@@ -1,16 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest.Páginas
+namespace LIS_Juego_Loterest.Ventanas
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
-    public partial class SalaChat : IPageListener
+    public partial class SalaChat : Window
     {
-        private IPageManager _pageManager;
-        
         public SalaChat()
         {
             InitializeComponent();
@@ -61,14 +55,9 @@ namespace LIS_Juego_Loterest.Páginas
             ConnectUser();
         }
 
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
-        }
-
         private void JugarButton_Click(object sender, RoutedEventArgs e)
         {
-            _pageManager.CambiarPantalla<Menú>();
+           
         }
     }
 }

@@ -1,13 +1,13 @@
-﻿<Page x:Name="Sala" x:Class="LIS_Juego_Loterest.Páginas.SalaChat"
+﻿<Window x:Name="Sala" x:Class="LIS_Juego_Loterest.Ventanas.SalaChat"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="LOTEREST" Height="656" Width="1290" Loaded="Window_Loaded" HorizontalAlignment="Center" VerticalAlignment="Center">
-    <Page.Background>
-        <ImageBrush ImageSource="../Resources/fondoPrincipal.png"/>
-    </Page.Background>
+        Title="LOTEREST" Height="656" Width="1290" Loaded="Window_Loaded" HorizontalAlignment="Center" VerticalAlignment="Center" Icon="/LIS Juego Loterest;component/Resources/logoLoterest.png" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Window.Background>
+        <ImageBrush ImageSource="/LIS Juego Loterest;component/Resources/fondoPrincipal.png"/>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="388*"/>
@@ -49,8 +49,8 @@
         <ListBox x:Name="listBoxJugadoresDisponibles" HorizontalAlignment="Left" Height="284" Margin="379,177,0,0" VerticalAlignment="Top" Width="540" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF04547C" FontFamily="Calibri Light" FontSize="18" SelectionChanged="ListBoxJugadoresDisponibles_SelectionChanged"/>
         <Button x:Name="JugarButton" Content="JUGAR" HorizontalAlignment="Left" Margin="359,520,0,0" VerticalAlignment="Top" Width="576" Height="65" FontFamily="Calibri Light" FontSize="48" Foreground="#FF04C4DC" BorderBrush="#FF04C4DC" Background="White" Click="JugarButton_Click"/>
         <Label Content="Jugadores disponibles" HorizontalAlignment="Left" Margin="361,79,0,0" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="48" FontWeight="Bold" Foreground="White"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="656" Margin="39.333,34,-47,-34" VerticalAlignment="Top" Width="333" Source="/LIS Juego Loterest;component/Resources/cartasFondo.png"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="656" Margin="39.333,2,-47,-2" VerticalAlignment="Top" Width="333" Source="/LIS Juego Loterest;component/Resources/cartasFondo.png"/>
         <Label x:Name="UsernameLabel" Content="User" HorizontalAlignment="Left" Margin="93,198,0,0" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="48" FontWeight="Bold" Foreground="White" IsEnabled="False"/>
 
     </Grid>
-</Page>
+</Window>
