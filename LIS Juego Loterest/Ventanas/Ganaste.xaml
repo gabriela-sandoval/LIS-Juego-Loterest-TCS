@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LIS_Juego_Loterest"
         mc:Ignorable="d"
-        Title="Ganaste" Height="658" Width="1290" >
+        Title="Ganaste" Height="658" Width="1290" Icon="/LIS Juego Loterest;component/Resources/logoLoterest.png" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
     <Window.Background>
         <ImageBrush ImageSource="/LIS Juego Loterest;component/Resources/fondoPrincipal.png"/>
     </Window.Background>
