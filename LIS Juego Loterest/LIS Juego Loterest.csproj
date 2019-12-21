@@ -65,7 +65,7 @@
     <Compile Include="Páginas\Loteria.xaml.cs">
       <DependentUpon>Loteria.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Menú.xaml.cs">
+    <Compile Include="Menú.xaml.cs">
       <DependentUpon>Menú.xaml</DependentUpon>
     </Compile>
     <Compile Include="Páginas\Perdiste.xaml.cs">
@@ -127,7 +127,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Páginas\Menú.xaml">
+    <Page Include="Menú.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,21 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ServiceModel;
 using System.Windows;
+using DataModel;
 using DataModel.Model;
-
+using LIS_Juego_Loterest.Páginas;
 using ServerServices;
+using ServerServices.ServerServices;
 using VerificacionCorreo;
 
-namespace LIS_Juego_Loterest.Páginas
+namespace LIS_Juego_Loterest
 {
-    /// <summary>
-    /// Lógica de interacción para InicioSesión.xaml
-    /// </summary>
-
     [CallbackBehavior(UseSynchronizationContext = false)]
-    public partial class InicioSesión : Window
+    public partial class InicioSesión : Window, IGameServiceCallback
     {
-        //private PuntajeJugador jugador;
+        private UsuarioJugador usuarioJugador;
 
         public InicioSesión()
         {
@@ -27,12 +26,12 @@ namespace LIS_Juego_Loterest.Páginas
             string NombreJugador = NombreTextBoxIniciarSesion.Text.Trim();
             string ContraseñaJugador = ContaseñaTextBoxIniciarSesion.Password.Trim();
 
-                try
+            try
             {
                 InstanceContext instanceContext = new InstanceContext(this);
                 GameServices loginService = new GameServices(instanceContext);
 
-                if(ValidarDatosIngresadosInicioDeSesion(NombreJugador, ContraseñaJugador))
+                if (ValidarDatosIngresadosInicioDeSesion(NombreJugador, ContraseñaJugador))
                 {
                     loginService.IniciarSesion(NombreJugador, ContraseñaJugador);
                 }
@@ -63,6 +62,11 @@ namespace LIS_Juego_Loterest.Páginas
             }
         }
 
+        private void MostrarVentanaMenu(object sender, RoutedEventArgs e)
+        {
+            Menú menu = new Menú();
+            DesplegarVentana(menu);
+        }
 
         private void SiguienteButton_Click(object sender, RoutedEventArgs e)
         {
@@ -88,7 +92,7 @@ namespace LIS_Juego_Loterest.Páginas
                                 ContraseñaJugador = contraseñaJugador
                             };
 
-                            Verificación verificación = new Verificación(codigoVerificacion, usuarioJugador);
+                            Páginas.Verificación verificación = new Páginas.Verificación(codigoVerificacion, usuarioJugador);
                             DesplegarVentana(verificación);
                         }
                         else
@@ -115,6 +119,7 @@ namespace LIS_Juego_Loterest.Páginas
         private void DesplegarVentana(Window ventana)
         {
             ventana.Show();
+            this.Close();
         }
 
         private int GenerarCodigoVerificacion()
@@ -165,6 +170,31 @@ namespace LIS_Juego_Loterest.Páginas
         private void RegistrarJugador_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public void MensajeChat(string mensajeJugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Respuesta(string mensajeJugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MostrarCuentaJugador(Jugador jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MostrarPuntajeJugador(List<PuntajeJugador> puntajes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RecibirFinPartida(string mensajeJugador)
+        {
+            throw new NotImplementedException();
         }
     }
 }

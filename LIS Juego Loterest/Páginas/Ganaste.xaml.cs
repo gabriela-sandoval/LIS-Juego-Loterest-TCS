@@ -6,9 +6,9 @@ namespace LIS_Juego_Loterest.Páginas
     /// <summary>
     /// Lógica de interacción para Ganaste.xaml
     /// </summary>
-    public partial class Ganaste : IPageListener
+    public partial class Ganaste : Window
     {
-        private IPageManager _pageManager;
+
         
         public Ganaste()
         {
@@ -17,12 +17,8 @@ namespace LIS_Juego_Loterest.Páginas
 
         private void ButtonAceptar_Click(object sender, RoutedEventArgs e)
         {
-            _pageManager.CambiarPantalla<Menú>();
+            
         }
 
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
-        }
     }
 }
