@@ -1,15 +1,10 @@
 ﻿using System.Windows;
 using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest.Páginas
+namespace LIS_Juego_Loterest.Ventanas
 {
-    /// <summary>
-    /// Lógica de interacción para Ganaste.xaml
-    /// </summary>
     public partial class Ganaste : Window
     {
-
-        
         public Ganaste()
         {
             InitializeComponent();
@@ -19,6 +14,5 @@ namespace LIS_Juego_Loterest.Páginas
         {
             
         }
-
     }
 }
