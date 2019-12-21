@@ -1,15 +1,9 @@
 ﻿using System.Windows;
-using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest.Páginas
+namespace LIS_Juego_Loterest.Ventanas
 {
-    /// <summary>
-    /// Lógica de interacción para Tablero.xaml
-    /// </summary>
-    public partial class Tablero : IPageListener
-    {
-        private IPageManager _pageManager;
-        
+    public partial class Tablero : Window
+    {   
         public Tablero()
         {
             InitializeComponent();
@@ -17,18 +11,12 @@ namespace LIS_Juego_Loterest.Páginas
 
         private void ButtonSeleccionarTablero_Click(object sender, RoutedEventArgs e)
         {
-            _pageManager.CambiarPantalla<Loteria>();
+            
         }
 
         private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
         {
-            _pageManager.CambiarPantalla<Menú>();
-        }
-
-
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
+           
         }
     }
 }
