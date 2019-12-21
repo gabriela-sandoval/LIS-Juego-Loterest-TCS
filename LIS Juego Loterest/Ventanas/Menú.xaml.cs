@@ -1,6 +1,10 @@
 ﻿using System.Windows;
 
-namespace LIS_Juego_Loterest
+/// <summary>
+/// Ventana Menú.
+/// Muestra todas las opciones posibles que existen dentro del juego.
+/// </summary>
+namespace LIS_Juego_Loterest.Ventanas
 {
     public partial class Menú : Window
     {
@@ -47,7 +51,7 @@ namespace LIS_Juego_Loterest
             
         }
 
-        private void buttonLoteria_Click(object sender, RoutedEventArgs e)
+        private void ButtonLoteria_Click(object sender, RoutedEventArgs e)
         {
 
         }

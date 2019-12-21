@@ -41,85 +41,85 @@
     </ApplicationDefinition>
     <Compile Include="Interface\IPageListener.cs" />
     <Compile Include="Interface\IPageManager.cs" />
-    <Compile Include="Páginas\AcercaDe.xaml.cs">
+    <Compile Include="Ventanas\AcercaDe.xaml.cs">
       <DependentUpon>AcercaDe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\AlAzar.xaml.cs">
+    <Compile Include="Ventanas\AlAzar.xaml.cs">
       <DependentUpon>AlAzar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Carta.xaml.cs">
+    <Compile Include="Ventanas\Carta.xaml.cs">
       <DependentUpon>Carta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\ComoJugar.xaml.cs">
+    <Compile Include="Ventanas\ComoJugar.xaml.cs">
       <DependentUpon>ComoJugar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Ganaste.xaml.cs">
+    <Compile Include="Ventanas\Ganaste.xaml.cs">
       <DependentUpon>Ganaste.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Idioma.xaml.cs">
+    <Compile Include="Ventanas\Idioma.xaml.cs">
       <DependentUpon>Idioma.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Logros.xaml.cs">
+    <Compile Include="Ventanas\Logros.xaml.cs">
       <DependentUpon>Logros.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Loteria.xaml.cs">
+    <Compile Include="Ventanas\Loteria.xaml.cs">
       <DependentUpon>Loteria.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Menú.xaml.cs">
+    <Compile Include="Ventanas\Menú.xaml.cs">
       <DependentUpon>Menú.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Perdiste.xaml.cs">
+    <Compile Include="Ventanas\Perdiste.xaml.cs">
       <DependentUpon>Perdiste.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Puntaje.xaml.cs">
+    <Compile Include="Ventanas\Puntaje.xaml.cs">
       <DependentUpon>Puntaje.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\SalaChat.xaml.cs">
+    <Compile Include="Ventanas\SalaChat.xaml.cs">
       <DependentUpon>SalaChat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Salir.xaml.cs">
+    <Compile Include="Ventanas\Salir.xaml.cs">
       <DependentUpon>Salir.xaml</DependentUpon>
     </Compile>
     <Compile Include="InicioSesión.xaml.cs">
       <DependentUpon>InicioSesión.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Páginas\Tablero.xaml.cs">
+    <Compile Include="Ventanas\Tablero.xaml.cs">
       <DependentUpon>Tablero.xaml</DependentUpon>
     </Compile>
     <Compile Include="SessionManager\Session.cs" />
     <Compile Include="Util\ClientFactory.cs" />
-    <Compile Include="Páginas\Verificación.xaml.cs">
+    <Compile Include="Ventanas\Verificación.xaml.cs">
       <DependentUpon>Verificación.xaml</DependentUpon>
     </Compile>
-    <Page Include="Páginas\AcercaDe.xaml">
+    <Page Include="Ventanas\AcercaDe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\AlAzar.xaml">
+    <Page Include="Ventanas\AlAzar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\Carta.xaml">
+    <Page Include="Ventanas\Carta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\ComoJugar.xaml">
+    <Page Include="Ventanas\ComoJugar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\Ganaste.xaml">
+    <Page Include="Ventanas\Ganaste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\Idioma.xaml">
+    <Page Include="Ventanas\Idioma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\Logros.xaml">
+    <Page Include="Ventanas\Logros.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\Loteria.xaml">
+    <Page Include="Ventanas\Loteria.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,34 +127,34 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Menú.xaml">
+    <Page Include="Ventanas\Menú.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\Perdiste.xaml">
+    <Page Include="Ventanas\Perdiste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\Puntaje.xaml">
+    <Page Include="Ventanas\Puntaje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\SalaChat.xaml">
+    <Page Include="Ventanas\SalaChat.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Páginas\Salir.xaml">
+    <Page Include="Ventanas\Salir.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InicioSesión.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\Tablero.xaml">
+    <Page Include="Ventanas\Tablero.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Páginas\Verificación.xaml">
+    <Page Include="Ventanas\Verificación.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
