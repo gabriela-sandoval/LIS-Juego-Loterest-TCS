@@ -1,22 +1,15 @@
-﻿using LIS_Juego_Loterest.Interface;
+﻿using System.Windows;
 
-namespace LIS_Juego_Loterest.Páginas
+/// <summary>
+/// Lógica de interacción para Salir.xaml
+/// </summary>
+namespace LIS_Juego_Loterest.Ventanas
 {
-    /// <summary>
-    /// Lógica de interacción para Salir.xaml
-    /// </summary>
-    public partial class Salir : IPageListener
-    {
-        private IPageManager _pageManager;
-        
+    public partial class Salir : Window
+    {   
         public Salir()
         {
             InitializeComponent();
-        }
-
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
         }
     }
 }
