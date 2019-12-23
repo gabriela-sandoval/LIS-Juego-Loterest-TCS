@@ -4,10 +4,10 @@ using System.ServiceModel;
 using System.Windows;
 using DataModel;
 using DataModel.Model;
-using LIS_Juego_Loterest.Páginas;
 using ServerServices;
 using ServerServices.ServerServices;
 using VerificacionCorreo;
+using LIS_Juego_Loterest.Ventanas;
 
 namespace LIS_Juego_Loterest
 {
@@ -92,7 +92,7 @@ namespace LIS_Juego_Loterest
                                 ContraseñaJugador = contraseñaJugador
                             };
 
-                            Páginas.Verificación verificación = new Páginas.Verificación(codigoVerificacion, usuarioJugador);
+                            Verificación verificación = new Verificación(codigoVerificacion, usuarioJugador);
                             DesplegarVentana(verificación);
                         }
                         else

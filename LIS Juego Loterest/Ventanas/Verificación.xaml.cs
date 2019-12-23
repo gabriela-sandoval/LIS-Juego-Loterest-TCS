@@ -1,19 +1,17 @@
 ﻿using System.Windows;
-using LIS_Juego_Loterest.Interface;
 
 using DataModel;
 using DataModel.Model;
 using System.ServiceModel;
 using ServerServices;
 
-namespace LIS_Juego_Loterest.Páginas
+namespace LIS_Juego_Loterest.Ventanas
 {
     /// <summary>
     /// Lógica de interacción para Verificación.xaml
     /// </summary>
     public partial class Verificación : Window
     {
-        private IPageManager _pageManager;
         private string codigoVerificacion;
         private UsuarioJugador cuentaCreada;
 
@@ -28,12 +26,6 @@ namespace LIS_Juego_Loterest.Páginas
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            _pageManager.CambiarPantalla<Menú>();
-        }
-
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
         }
 
         private void VerificarButton_Click(object sender, RoutedEventArgs e)

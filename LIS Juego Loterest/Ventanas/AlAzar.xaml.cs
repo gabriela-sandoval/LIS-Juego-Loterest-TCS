@@ -1,15 +1,12 @@
 ﻿using System.Windows;
-using LIS_Juego_Loterest.Interface;
 
-namespace LIS_Juego_Loterest.Páginas
+namespace LIS_Juego_Loterest.Ventanas
 {
     /// <summary>
     /// Lógica de interacción para Al_azar.xaml
     /// </summary>
-    public partial class AlAzar : IPageListener
-    {
-        private IPageManager _pageManager;
-        
+    public partial class AlAzar : Window
+    {   
         public AlAzar()
         {
             InitializeComponent();
@@ -17,12 +14,7 @@ namespace LIS_Juego_Loterest.Páginas
 
         private void ButtonLoteria_Click(object sender, RoutedEventArgs e)
         {
-            _pageManager.CambiarPantalla<Perdiste>();
-        }
-
-        public void SetPageManager(IPageManager pageManager)
-        {
-            _pageManager = pageManager;
+           
         }
     }
 }

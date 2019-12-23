@@ -40,24 +40,24 @@
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.5"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="171" Margin="30,39,0,0" VerticalAlignment="Top" Width="192" RenderTransformOrigin="0.041,0.212" Source="Resources/imagenUsuarioCamaleon.png"/>
+        <Image HorizontalAlignment="Left" Height="171" Margin="30,39,0,0" VerticalAlignment="Top" Width="192" RenderTransformOrigin="0.041,0.212" Source="/LIS Juego Loterest;component/Resources/imagenUsuarioCamaleon.png"/>
         <Button x:Name="buttonPuntaje" Content="PUNTAJE" HorizontalAlignment="Left" Margin="0,266,0,0" VerticalAlignment="Top" Width="248" Height="50" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" BorderBrush="White" Foreground="White" Click="ButtonPuntaje_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FF04C4DC" Opacity="0.5"/>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="100" Margin="1190,502,0,0" VerticalAlignment="Top" Width="100" Source="Resources/logoLoterest.png"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="1190,502,0,0" VerticalAlignment="Top" Width="100" Source="/LIS Juego Loterest;component/Resources/logoLoterest.png"/>
         <Label Content="Selecciona un modo de juego:" HorizontalAlignment="Left" Margin="314,39,0,0" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="36" FontWeight="Bold" Foreground="White"/>
         <Label Content="LOTERIA" HorizontalAlignment="Left" Margin="457,127,0,0" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="60" FontWeight="Bold" Foreground="White"/>
         <Label Content="AL AZAR" HorizontalAlignment="Left" Margin="812,127,0,0" VerticalAlignment="Top" FontFamily="Calibri Light" FontSize="60" FontWeight="Bold" Foreground="White"/>
-        <Button x:Name="buttonLoteria" Content="" HorizontalAlignment="Left" Margin="399,210,0,0" VerticalAlignment="Top" Width="290" Height="361" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="buttonLoteria_Click">
+        <Button x:Name="buttonLoteria" Content="" HorizontalAlignment="Left" Margin="399,210,0,0" VerticalAlignment="Top" Width="290" Height="361" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonLoteria_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Resources/cartaLoteria.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="/LIS Juego Loterest;component/Resources/cartaLoteria.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Button x:Name="buttonAlAzar" Content="" HorizontalAlignment="Left" Margin="777,215,0,0" VerticalAlignment="Top" Width="290" Height="361" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="ButtonAlAzar_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Resources/cartaAlAzar.png" Stretch="Uniform"/>
+                <ImageBrush ImageSource="/LIS Juego Loterest;component/Resources/cartaAlAzar.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <TextBox x:Name="textBoxUserName" HorizontalAlignment="Left" Height="51" Margin="8,197,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="240" FontFamily="Calibri Light" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
