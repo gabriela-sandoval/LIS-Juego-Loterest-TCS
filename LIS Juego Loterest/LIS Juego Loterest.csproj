@@ -39,8 +39,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Interface\IPageListener.cs" />
-    <Compile Include="Interface\IPageManager.cs" />
     <Compile Include="Ventanas\AcercaDe.xaml.cs">
       <DependentUpon>AcercaDe.xaml</DependentUpon>
     </Compile>
@@ -86,8 +84,6 @@
     <Compile Include="Ventanas\Tablero.xaml.cs">
       <DependentUpon>Tablero.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SessionManager\Session.cs" />
-    <Compile Include="Util\ClientFactory.cs" />
     <Compile Include="Ventanas\Verificación.xaml.cs">
       <DependentUpon>Verificación.xaml</DependentUpon>
     </Compile>
