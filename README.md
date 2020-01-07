@@ -19,7 +19,7 @@ Este juego es realizado para la Experiencia Educativa de Tecnologías para la Co
   - WCF
   - WPF
   - Entity Framework
-- MySql
+- SqlServer
 
 ## Autor :woman:
 - Gabriela Sandoval Cruz
